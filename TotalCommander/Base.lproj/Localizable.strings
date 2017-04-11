@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TotalCommander
+
+  Created by Marcin Karmelita on 10/04/17.
+  Copyright © 2017 Marcin Karmelita. All rights reserved.
+*/
+
+// Base
+
+"button" = "Button";
+"TotalCommander" = "Commander";

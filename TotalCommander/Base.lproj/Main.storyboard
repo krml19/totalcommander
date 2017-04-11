@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -10,9 +12,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="TotalCommander" id="1Xt-HY-uBw">
+                            <menuItem title="Total Commander" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="TotalCommander" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Total Commander" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About TotalCommander" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -54,9 +56,9 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="File" id="dMs-cI-mzQ">
+                            <menuItem title="Files" id="dMs-cI-mzQ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="File" id="bib-Uj-vzu">
+                                <menu key="submenu" title="Files" id="bib-Uj-vzu">
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
@@ -116,6 +118,9 @@
                                         </menuItem>
                                     </items>
                                 </menu>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value="title"/>
+                                </userDefinedRuntimeAttributes>
                             </menuItem>
                             <menuItem title="Edit" id="5QF-Oa-p0T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -653,10 +658,16 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TotalCommander" customModuleProvider="target">
+                    <connections>
+                        <outlet property="file" destination="bib-Uj-vzu" id="m90-d5-TVz"/>
+                        <outlet property="fileMenuItem" destination="dMs-cI-mzQ" id="pcd-FR-vd7"/>
+                        <outlet property="mainMenu" destination="AYu-sK-qS6" id="llP-yd-o2J"/>
+                    </connections>
+                </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="24" y="-150"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -679,11 +690,27 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IwO-mT-aCi">
+                                <rect key="frame" x="207" y="117" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0gh-xs-jtm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="languageChanged:" target="XfG-lQ-9wD" id="4Xd-W3-0E6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="languageButton" destination="IwO-mT-aCi" id="bVh-NM-T5s"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
