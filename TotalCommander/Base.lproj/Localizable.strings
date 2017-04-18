@@ -10,3 +10,16 @@
 
 "button" = "Button";
 "TotalCommander" = "Commander";
+
+//menu
+"menu_app" = "Total Commander";
+"menu_file" = "File";
+"menu_edit" = "Edit";
+"menu_help" = "Help";
+
+"menu_app_tooltip" = "Total Commander";
+"menu_file_tooltip" = "File";
+"menu_edit_tooltip" = "Edit";
+"menu_help_tooltip" = "Help";
+
+

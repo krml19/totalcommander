@@ -16,6 +16,10 @@
 		F2184E781E9C1AB6006E0BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2184E761E9C1AB6006E0BDB /* Main.storyboard */; };
 		F2184E831E9C1AB7006E0BDB /* TotalCommanderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2184E821E9C1AB7006E0BDB /* TotalCommanderTests.swift */; };
 		F2184E8E1E9C1AB7006E0BDB /* TotalCommanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2184E8D1E9C1AB7006E0BDB /* TotalCommanderUITests.swift */; };
+		F25D259F1EA5375200074EE6 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D259E1EA5375200074EE6 /* MainMenu.swift */; };
+		F25D25A11EA5375E00074EE6 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A01EA5375E00074EE6 /* Language.swift */; };
+		F25D25A51EA5443600074EE6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A41EA5443600074EE6 /* Task.swift */; };
+		F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A71EA55DF400074EE6 /* Defaults.swift */; };
 		F2CCDAF71E9C1D2000030116 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2CCDAF91E9C1D2000030116 /* Localizable.strings */; };
 		F2CCDAFC1E9C1D3800030116 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2CCDAFE1E9C1D3800030116 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -58,6 +62,10 @@
 		F2184E891E9C1AB7006E0BDB /* TotalCommanderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TotalCommanderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2184E8D1E9C1AB7006E0BDB /* TotalCommanderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCommanderUITests.swift; sourceTree = "<group>"; };
 		F2184E8F1E9C1AB7006E0BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F25D259E1EA5375200074EE6 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		F25D25A01EA5375E00074EE6 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		F25D25A41EA5443600074EE6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		F25D25A71EA55DF400074EE6 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F2CCDAF81E9C1D2000030116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F2CCDAFD1E9C1D3800030116 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F51886F5D4C428BDEB8365C9 /* Pods-TotalCommanderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TotalCommanderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TotalCommanderUITests/Pods-TotalCommanderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,11 +136,10 @@
 			children = (
 				F2184E701E9C1AB6006E0BDB /* AppDelegate.swift */,
 				F2184E721E9C1AB6006E0BDB /* ViewController.swift */,
-				F2184E741E9C1AB6006E0BDB /* Assets.xcassets */,
-				F2184E761E9C1AB6006E0BDB /* Main.storyboard */,
-				F2CCDAF91E9C1D2000030116 /* Localizable.strings */,
-				F2CCDAFE1E9C1D3800030116 /* Localizable.strings */,
-				F2184E791E9C1AB6006E0BDB /* Info.plist */,
+				F25D25A31EA537C000074EE6 /* Resources */,
+				F25D25A21EA537B400074EE6 /* Main menu */,
+				F25D25A01EA5375E00074EE6 /* Language.swift */,
+				F25D25A41EA5443600074EE6 /* Task.swift */,
 			);
 			path = TotalCommander;
 			sourceTree = "<group>";
@@ -153,6 +160,35 @@
 				F2184E8F1E9C1AB7006E0BDB /* Info.plist */,
 			);
 			path = TotalCommanderUITests;
+			sourceTree = "<group>";
+		};
+		F25D25A21EA537B400074EE6 /* Main menu */ = {
+			isa = PBXGroup;
+			children = (
+				F25D259E1EA5375200074EE6 /* MainMenu.swift */,
+				F25D25A71EA55DF400074EE6 /* Defaults.swift */,
+			);
+			name = "Main menu";
+			sourceTree = "<group>";
+		};
+		F25D25A31EA537C000074EE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F25D25A61EA5444F00074EE6 /* Scripts */,
+				F2184E741E9C1AB6006E0BDB /* Assets.xcassets */,
+				F2184E761E9C1AB6006E0BDB /* Main.storyboard */,
+				F2CCDAF91E9C1D2000030116 /* Localizable.strings */,
+				F2CCDAFE1E9C1D3800030116 /* Localizable.strings */,
+				F2184E791E9C1AB6006E0BDB /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F25D25A61EA5444F00074EE6 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scripts;
 			sourceTree = "<group>";
 		};
 		FC4B6A847628F1EC279C7949 /* Pods */ = {
@@ -438,6 +474,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2184E731E9C1AB6006E0BDB /* ViewController.swift in Sources */,
+				F25D25A11EA5375E00074EE6 /* Language.swift in Sources */,
+				F25D25A51EA5443600074EE6 /* Task.swift in Sources */,
+				F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */,
+				F25D259F1EA5375200074EE6 /* MainMenu.swift in Sources */,
 				F2184E711E9C1AB6006E0BDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,3 +10,14 @@
 
 "button" = "Przycisk";
 "TotalCommander" = "Total Commander";
+
+// menu
+"menu_app" = "Total Commander";
+"menu_file" = "Plik";
+"menu_edit" = "Edycja";
+"menu_help" = "Pomoc";
+
+"menu_app_tooltip" = "Total Commander";
+"menu_file_tooltip" = "Plik";
+"menu_edit_tooltip" = "Edycja";
+"menu_help_tooltip" = "Pomoc";

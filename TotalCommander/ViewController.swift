@@ -7,20 +7,21 @@
 //
 
 import Cocoa
-import Localize_Swift
 
 class ViewController: NSViewController {
 
+    fileprivate var localizable: Localizable!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        localizable = Localizable(self)
 
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var languageButton: NSButton!
 
     @IBAction func languageChanged(_ sender: Any) {
-        Localize.currentLanguage() == "en" ? Localize.setCurrentLanguage("pl-PL") : Localize.setCurrentLanguage("en")
+        localizable.changeLanguage()
     }
     override var representedObject: Any? {
         didSet {
@@ -29,8 +30,14 @@ class ViewController: NSViewController {
     }
 
     func setText() {
+//        languageButton.title = "button".localized()
+    }
+}
+
+extension ViewController: LocalizedDelegate {
+    func langugeDidChange() {
         languageButton.title = "button".localized()
     }
-
+    
 }
 
