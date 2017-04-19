@@ -57,7 +57,7 @@ class MainMenu: NSMenu {
         setSubmenu(menu, for: item)
     }
 
-    func prepareMenu() {
+    private func prepareMenu() {
         app()
         file()
         edit()
@@ -65,12 +65,12 @@ class MainMenu: NSMenu {
     }
 }
 
+// MARK: - Class methods
 extension MainMenu {
     
     public class func updateLanguage(menu: NSMenu) {
 
         menu.items.forEach({ item in
-            
             if item.hasSubmenu {
                 item.submenu!.title = item.identifier!.localized()
                 updateLanguage(menu: item.submenu!)

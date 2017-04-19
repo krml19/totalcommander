@@ -8,6 +8,9 @@
 
 import Cocoa
 import Localize_Swift
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -25,10 +28,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func setup() {
+        // language
         localizable = Localizable(self)
         
+        // menu
         let menu = MainMenu(title: "File")
         NSApp.mainMenu = menu
+        
+        //swifty beaver
+        log.addDestination(ConsoleDestination())
     }
 }
 
