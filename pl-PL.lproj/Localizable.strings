@@ -21,3 +21,6 @@
 "menu_file_tooltip" = "Plik";
 "menu_edit_tooltip" = "Edycja";
 "menu_help_tooltip" = "Pomoc";
+
+// commander
+"loc_bytes" = " bajtów";

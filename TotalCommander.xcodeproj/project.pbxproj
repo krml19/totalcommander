@@ -68,6 +68,8 @@
 		F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanderViewController.swift; sourceTree = "<group>"; };
 		F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Commander.storyboard; sourceTree = "<group>"; };
 		F23AAAAE1EA7EEB700E995B2 /* FileKit+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Sort.swift"; sourceTree = "<group>"; };
+		F24CEAE61EA8196A008C5993 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F24CEAE81EA8196C008C5993 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Main.strings"; sourceTree = "<group>"; };
 		F25D259E1EA5375200074EE6 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		F25D25A01EA5375E00074EE6 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		F25D25A41EA5443600074EE6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pl-PL",
 			);
 			mainGroup = F2184E641E9C1AB6006E0BDB;
 			productRefGroup = F2184E6E1E9C1AB6006E0BDB /* Products */;
@@ -546,6 +549,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F2184E771E9C1AB6006E0BDB /* Base */,
+				F24CEAE61EA8196A008C5993 /* en */,
+				F24CEAE81EA8196C008C5993 /* pl-PL */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -48,6 +48,34 @@ class MainMenu: NSMenu {
         setSubmenu(menu, for: item)
     }
     
+    private func createItem(_ title: String, action: Selector?) -> NSMenuItem {
+        let item = NSMenuItem(title: title.localized(), action: action, keyEquivalent: title)
+        item.identifier = title
+        item.toolTip = (item.identifier! + "_tooltip").localized()
+        item.isEnabled = true
+        return item
+    }
+    
+    private func language() {
+        let item = createItem("menu_lang", action: nil)
+        self.addItem(item)
+        let menu = NSMenu(title: "menu_lang".localized())
+        setSubmenu(menu, for: item)
+        
+        var polishSelector: Selector? {
+            Localizable.set(language: Localizable.Language.pl)
+            return nil
+        }
+        
+        var englishSelector: Selector? {
+            Localizable.set(language: Localizable.Language.en)
+            return nil
+        }
+        
+        menu.addItem(createItem("menu_lang_en", action: polishSelector))
+        menu.addItem(createItem("menu_lang_pl", action: englishSelector))
+    }
+    
     private func help() {
         let item = NSMenuItem(title: "menu_help".localized(), action: nil, keyEquivalent: "menu_help")
         item.identifier = "menu_help"
@@ -61,6 +89,7 @@ class MainMenu: NSMenu {
         app()
         file()
         edit()
+        language()
         help()
     }
 }
@@ -69,10 +98,23 @@ class MainMenu: NSMenu {
 extension MainMenu {
     
     public class func updateLanguage(menu: NSMenu) {
-
+        
+//        log.debug(menu.identifier)
+        
         menu.items.forEach({ item in
+            item.title = item.identifier?.localized() ?? "None"
+            log.info(item.toolTip)
+            
+            
+            log.debug(item.accessibilityIdentifier())
+            
             if item.hasSubmenu {
-                item.submenu!.title = item.identifier!.localized()
+                if item.identifier != nil {
+                    
+                }
+                
+            
+                log.error(item.identifier)
                 updateLanguage(menu: item.submenu!)
             }
         })

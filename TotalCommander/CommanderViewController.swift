@@ -119,7 +119,7 @@ extension CommanderViewController: NSTableViewDelegate {
             text = dateFormatter.string(from: item.modificationDate ?? item.creationDate ?? Date())
             cellIdentifier = CellIdentifiers.DateCell
         } else if tableColumn == tableView.tableColumns[2] {
-            text = item.isDirectory ? Formatter.Size.Empty : String(describing: item.fileSize!) + " bytes".localized()
+            text = item.isDirectory ? Formatter.Size.Empty : String(describing: item.fileSize!) + "loc_bytes".localized()
             cellIdentifier = CellIdentifiers.SizeCell
         }
         

@@ -9,28 +9,32 @@
 import Cocoa
 import Localize_Swift
 
-protocol Language {
-    
-    var pl: String { get }
-    var en: String { get }
-}
-
 protocol LocalizedDelegate {
     func langugeDidChange()
 }
 
-class Localizable: Language {
+class Localizable {
+    
+    enum Language: String {
+        case pl = "pl-PL"
+        case en = "en"
+    }
+    
+    class func set(language: Language) {
+        Localize.setCurrentLanguage(language.rawValue)
+    }
+    
+    class func toggleLanguage() {
+        Localize.currentLanguage() == Language.pl.rawValue ? set(language: .en) : set(language: .pl)
+    }
     
     required init(_ object: LocalizedDelegate) {
         delegate = object
         setupNotification()
     }
     
-    var delegate: LocalizedDelegate?
     
-    func changeLanguage() {
-        Localize.currentLanguage() == en ? Localize.setCurrentLanguage(pl) : Localize.setCurrentLanguage(en)
-    }
+    var delegate: LocalizedDelegate?
     
     private func setupNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged),
@@ -40,16 +44,5 @@ class Localizable: Language {
     
     @objc private func languageChanged() {
         delegate?.langugeDidChange()
-    }
-}
-
-extension Language {
-    
-    var pl: String {
-        return "pl-PL"
-    }
-    
-    var en: String {
-        return "en"
     }
 }

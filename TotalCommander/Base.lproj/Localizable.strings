@@ -22,4 +22,7 @@
 "menu_edit_tooltip" = "Edit";
 "menu_help_tooltip" = "Help";
 
+// commander
+"loc_bytes" = " bytes";
+
 

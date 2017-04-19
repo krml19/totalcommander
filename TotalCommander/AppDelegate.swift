@@ -27,13 +27,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    @IBAction func chanlang(_ sender: Any) {
+        Localizable.toggleLanguage()
+    }
     func setup() {
         // language
         localizable = Localizable(self)
         
         // menu
-        let menu = MainMenu(title: "File")
-        NSApp.mainMenu = menu
+//        let menu = MainMenu(title: "File")
+//        NSApp.mainMenu = menu
         
         //swifty beaver
         log.addDestination(ConsoleDestination())
