@@ -18,23 +18,35 @@ class CommanderViewController: ViewController {
             pathControl.isEditable = true
         }
     }
+    var progressProvider: FileProgressProvider!
+    
+    var dispatchFileSystemWatcher: DispatchFileSystemWatcher!
+    var fileSystemWatcher: FileSystemWatcher!
 
     var path: Path! = Path() {
         didSet {
             pathControl.url = path.url
             items = path.sorted(by: tableView.sortDescriptors.first)
+//            dispatchFileSystemWatcher = path.watch2(.All, delegate: self) { dispatchFileSystemWatcher in
+//                log.debug(dispatchFileSystemWatcher.currentEvent)
+//            }
+            
+            fileSystemWatcher = path.watch(0.5, queue: DispatchQueue.global(qos: .userInteractive)) { fileSystemEvent in
+                log.info(fileSystemEvent.path.fileSize ?? "--")
+            }
         }
     }
     var items: [Path]! = [] {
         didSet {
             tableView.reloadData()
+            
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,13 +55,11 @@ class CommanderViewController: ViewController {
         pathControl.action = #selector(pathControlAction(_:))
         path = Path(url: pathControl.url!)
         
-        
         tableView.doubleAction = #selector(tableViewDoubleClick(_:))
         
         for item in 0...2 {
             tableView.tableColumns[item].sortDescriptorPrototype = NSSortDescriptor(key: Path.SortingOptions.indexOf(index: item).rawValue, ascending: true)
         }
-        
     }
     
     override var representedObject: Any? {
@@ -72,8 +82,38 @@ class CommanderViewController: ViewController {
         guard tableView.selectedRow >= 0 else { return }
         
         let selectedPath = items[tableView.selectedRow]
+        
         if selectedPath.isDirectory {
             path = selectedPath
+        } else {
+//            let src = Path("/Users/marcinkarmelita/Desktop/mag_nor/iii.dmg")
+            let src = Path("/Volumes/SanDisk/Archive.zip")
+            let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
+            
+//            progress(src)
+//            progress(dst)
+            
+            
+            DispatchQueue.global().async {
+                src.copy(dst)
+            }
+            
+//            fileSystemWatcher = dst.watch(callback: { (fileSystemEvent) in
+//                log.error(fileSystemEvent.path.fileSize ?? "")
+//            })
+//            fileSystemWatcher = dst.watch(0.5, queue: .main, callback: { fileSystemEvent in
+//                log.error(fileSystemEvent.path.fileSize ?? "")
+//            })
+            
+//            fileSystemWatcher.flushSync()
+//            dispatchFileSystemWatcher = path.watch2(.All, queue: .global(), delegate: nil, callback: { (dispatch) in
+//                log.error(dispatch.currentEvent?.rawValue)
+//            })
+            progressProvider = FileProgressProvider(src, dst: dst)
+            progressProvider.delegate = self
+            
+//            selectedPath.move(selectedPath.parent.parent)
+            
         }
     }
 }
@@ -132,9 +172,13 @@ extension CommanderViewController: NSTableViewDelegate {
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-//        updateStatus()
+        func updateStatus() {
+            statusLabel.stringValue = String(tableView.numberOfSelectedRows)
+        }
+        
+        updateStatus()
     }
-
+    
 }
 
 extension CommanderViewController: NSTableViewDataSource {
@@ -145,5 +189,15 @@ extension CommanderViewController: NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
         items = path.sorted(by: tableView.sortDescriptors.first)
+    }
+}
+
+extension CommanderViewController: ProgressProvider {
+    func onProgress(_ progress: Double) {
+        log.debug("Progress: \(progress)")
+    }
+    
+    func onDone() {
+        log.debug("Done")
     }
 }

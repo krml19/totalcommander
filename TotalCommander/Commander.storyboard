@@ -21,13 +21,13 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="VAu-MH-ZSn" userLabel="Table Container">
                                         <rect key="frame" x="0.0" y="30" width="523" height="240"/>
                                         <subviews>
-                                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfM-mj-DZp">
+                                            <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfM-mj-DZp">
                                                 <rect key="frame" x="0.0" y="0.0" width="523" height="210"/>
                                                 <clipView key="contentView" id="1KD-wx-uqo">
                                                     <rect key="frame" x="1" y="0.0" width="521" height="209"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="lN4-9e-M57" viewBased="YES" id="faZ-fT-uXb">
+                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowHeight="40" rowSizeStyle="automatic" headerView="lN4-9e-M57" viewBased="YES" id="faZ-fT-uXb">
                                                             <rect key="frame" x="0.0" y="0.0" width="521" height="186"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -157,11 +157,11 @@
                                                 </tableHeaderView>
                                             </scrollView>
                                             <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-II-Ep9">
-                                                <rect key="frame" x="1" y="215" width="207" height="20"/>
+                                                <rect key="frame" x="1" y="215" width="273" height="20"/>
                                                 <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="jbr-Yj-mxI">
                                                     <font key="font" metaFont="smallSystem"/>
-                                                    <url key="url" string="file://localhost/Applications/"/>
-                                                    <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="1" colorSpace="deviceRGB"/>
+                                                    <url key="url" string="file:///Users/marcinkarmelita/Desktop/mag_nor/"/>
+                                                    <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
                                                 </pathCell>
                                             </pathControl>
                                         </subviews>

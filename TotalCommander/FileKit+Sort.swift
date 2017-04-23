@@ -34,7 +34,7 @@ extension Path {
         return sorted(by: sortDescriptor.key, ascending: sortDescriptor.ascending)
     }
     
-    func sorted(by type: String?, ascending: Bool = true) -> [Path] {
+    private func sorted(by type: String?, ascending: Bool = true) -> [Path] {
         guard type != nil, let type = SortingOptions(rawValue: type!) else {
             return self.children()
         }
@@ -52,9 +52,6 @@ extension Path {
             return sorted({
                 ($0.0.fileSize ?? 0 < $0.1.fileSize ?? 0) == ascending
             })
-            
-        default:
-            return self.children()
         }
     }
     
