@@ -130,6 +130,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F217491A1EAC82E200655B35 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */,
+			);
+			name = Progress;
+			sourceTree = "<group>";
+		};
 		F2184E641E9C1AB6006E0BDB = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +171,7 @@
 				F25D25A41EA5443600074EE6 /* Task.swift */,
 				F23AAAAB1EA7D53B00E995B2 /* Commander */,
 				F23AAAB01EA7F3B100E995B2 /* Extensions */,
+				F217491A1EAC82E200655B35 /* Progress */,
 				F2347FE01EAB570B00D4311B /* TotalCommander.playground */,
 			);
 			path = TotalCommander;
@@ -204,7 +213,6 @@
 				F23AAAAE1EA7EEB700E995B2 /* FileKit+Sort.swift */,
 				F2819C841EAAA4B9000FBE8E /* FileKit+Handle.swift */,
 				F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */,
-				F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";

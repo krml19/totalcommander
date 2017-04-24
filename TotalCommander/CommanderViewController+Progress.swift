@@ -27,8 +27,5 @@ extension CommanderViewController {
         
         let progressIndicator = NSProgressIndicator()
         
-        
-        
-        
     }
 }

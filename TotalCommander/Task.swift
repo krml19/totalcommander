@@ -37,6 +37,10 @@ class Task: NSObject {
         self.arguments = arguments
     }
     
+    func interrupt() {
+        self.process.interrupt()
+    }
+    
     func run() {
         let taskQueue = DispatchQueue.global(qos: qos)
         

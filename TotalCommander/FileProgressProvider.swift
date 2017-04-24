@@ -9,28 +9,34 @@
 import Cocoa
 import FileKit
 
-protocol ProgressProvider {
+public protocol ProgressProvider {
     func onProgress(_ progress: Double)
     func onDone()
+    func onStart()
 }
 
-class FileProgressProvider {
-    var srcSize: UInt64
-    var dst: Path
-    var delegate: ProgressProvider?
+open class FileProgressProvider {
+    fileprivate var srcSize: UInt64
+    fileprivate var dst: Path
+    fileprivate var delegate: ProgressProvider?
     
-    lazy var timer: Timer = {
+    fileprivate lazy var timer: Timer = {
        let timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(FileProgressProvider.tick), userInfo: nil, repeats: true)
         return timer
     }()
     
-    init(_ src: Path, dst: Path) {
-        self.srcSize = src.fileSize ?? 0
-        self.dst = dst
+    public func start() {
         timer.fire()
+        delegate?.onStart()
     }
     
-    @objc func tick() {
+    init(_ src: Path, dst: Path, delegate: ProgressProvider? = nil) {
+        self.srcSize = src.fileSize ?? 0
+        self.dst = dst
+        self.delegate = delegate
+    }
+    
+    @objc fileprivate func tick() {
         let progress = calculateProgress()
         if progress == 1.0 {
             delegate?.onDone()

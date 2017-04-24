@@ -27,19 +27,15 @@ class CommanderViewController: ViewController {
         didSet {
             pathControl.url = path.url
             items = path.sorted(by: tableView.sortDescriptors.first)
-//            dispatchFileSystemWatcher = path.watch2(.All, delegate: self) { dispatchFileSystemWatcher in
-//                log.debug(dispatchFileSystemWatcher.currentEvent)
-//            }
             
             fileSystemWatcher = path.watch(0.5, queue: DispatchQueue.global(qos: .userInteractive)) { fileSystemEvent in
                 log.info(fileSystemEvent.path.fileSize ?? "--")
             }
         }
     }
-    var items: [Path]! = [] {
+    var items: [Path]? = [] {
         didSet {
             tableView.reloadData()
-            
         }
     }
     
@@ -51,6 +47,7 @@ class CommanderViewController: ViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.register(forDraggedTypes: [NSURLPboardType])
         tableView.target = self
         pathControl.action = #selector(pathControlAction(_:))
         path = Path(url: pathControl.url!)
@@ -69,10 +66,6 @@ class CommanderViewController: ViewController {
     }
     
     func pathControlAction(_ pathControl: NSPathControl) {
-        log.info(pathControl.clickedPathItem!)
-        log.info(pathControl.clickedPathComponentCell()!)
-        log.info(pathControl.pathItems)
-        
         if let url = pathControl.clickedPathItem?.url {
             path = Path(url: url)
         }
@@ -81,39 +74,19 @@ class CommanderViewController: ViewController {
     func tableViewDoubleClick(_ tableView: NSTableView) {
         guard tableView.selectedRow >= 0 else { return }
         
-        let selectedPath = items[tableView.selectedRow]
+        let selectedPath = items?[tableView.selectedRow]
         
-        if selectedPath.isDirectory {
+        if (selectedPath?.isDirectory)! {
             path = selectedPath
         } else {
-//            let src = Path("/Users/marcinkarmelita/Desktop/mag_nor/iii.dmg")
             let src = Path("/Volumes/SanDisk/Archive.zip")
             let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
-            
-//            progress(src)
-//            progress(dst)
-            
             
             DispatchQueue.global().async {
                 src.copy(dst)
             }
             
-//            fileSystemWatcher = dst.watch(callback: { (fileSystemEvent) in
-//                log.error(fileSystemEvent.path.fileSize ?? "")
-//            })
-//            fileSystemWatcher = dst.watch(0.5, queue: .main, callback: { fileSystemEvent in
-//                log.error(fileSystemEvent.path.fileSize ?? "")
-//            })
-            
-//            fileSystemWatcher.flushSync()
-//            dispatchFileSystemWatcher = path.watch2(.All, queue: .global(), delegate: nil, callback: { (dispatch) in
-//                log.error(dispatch.currentEvent?.rawValue)
-//            })
-            progressProvider = FileProgressProvider(src, dst: dst)
-            progressProvider.delegate = self
-            
-//            selectedPath.move(selectedPath.parent.parent)
-            
+            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
         }
     }
 }
@@ -143,7 +116,9 @@ extension CommanderViewController: NSTableViewDelegate {
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .long
         
-        let item = items[row]
+        guard let item = items?[row] else {
+            return nil
+        }
         
         if tableColumn == tableView.tableColumns[0] {
             do {
@@ -166,6 +141,7 @@ extension CommanderViewController: NSTableViewDelegate {
         if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
             cell.textField?.stringValue = text
             cell.imageView?.image = image ?? nil
+            
             return cell
         }
         return nil
@@ -184,7 +160,7 @@ extension CommanderViewController: NSTableViewDelegate {
 extension CommanderViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return items.count
+        return items?.count ?? 0
     }
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
@@ -200,4 +176,58 @@ extension CommanderViewController: ProgressProvider {
     func onDone() {
         log.debug("Done")
     }
+    
+    func onStart() {
+        
+    }
+}
+
+// drag
+extension CommanderViewController {
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+        log.debug(row)
+        if let size = items?.count, size >= row {
+            return true
+        }
+        
+        return items?[row].isDirectory == true
+    }
+
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+        log.info(dropOperation)
+        
+        if let size = items?.count, size >= row {
+            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
+            return .move
+        }
+        
+        if let item = items?[row], item.isDirectory {
+            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
+        } else {
+            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.none
+        }
+        
+        return NSDragOperation.move
+    }
+    
+    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+        log.debug("Ended at")
+        
+    }
+    
+    func tableView(_ tableView: NSTableView, updateDraggingItemsForDrag draggingInfo: NSDraggingInfo) {
+        let pasteboard = draggingInfo.draggingPasteboard()
+        if let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
+            log.info(urls)
+        }
+    }
+    
+    func tableView(_ tableView: NSTableView, didDrag tableColumn: NSTableColumn) {
+        log.debug("Did drag")
+    }
+    
+    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
+        log.debug("willBeginAt")
+    }
+    
 }
