@@ -9,6 +9,8 @@ target 'TotalCommander' do
   pod 'Localize-Swift', '~> 1.7'
   pod 'FileKit', '~> 4.0'
   pod 'SwiftyBeaver'
+  pod 'RxSwift',    '~> 3.0'
+  pod 'RxCocoa',    '~> 3.0'
   
   target 'TotalCommanderTests' do
     inherit! :search_paths

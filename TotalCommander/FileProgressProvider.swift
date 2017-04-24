@@ -9,16 +9,16 @@
 import Cocoa
 import FileKit
 
-@objc public protocol ProgressProvider {
-    func onProgress(_ progress: Double)
-    @objc optional func onDone()
-    @objc optional func onStart()
-}
+typealias StartHandler = ((Void) -> Void?)
+typealias EndHandler = ((Void) -> Void?)
+typealias ProgressHandler = ((Double) -> Void?)
 
 open class FileProgressProvider {
     fileprivate var srcSize: UInt64
     fileprivate var dst: Path
-    fileprivate var delegate: ProgressProvider?
+    fileprivate var startHandler: StartHandler?
+    fileprivate var progressHandler: ProgressHandler?
+    fileprivate var endHandler: EndHandler?
     
     fileprivate lazy var timer: Timer = {
        let timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(FileProgressProvider.tick), userInfo: nil, repeats: true)
@@ -27,33 +27,34 @@ open class FileProgressProvider {
     
     public func start() {
         timer.fire()
-        delegate?.onStart?()
+        startHandler?()
     }
     
     public func stop() {
         timer.invalidate()
-        delegate?.onDone?()
+        endHandler?()
     }
     
-    init(_ src: Path, dst: Path, delegate: ProgressProvider? = nil) {
+    init(_ src: Path, dst: Path, onStart: StartHandler? = nil, onProgress: ProgressHandler? = nil, onEnd: EndHandler? = nil) {
         self.srcSize = src.fileSize ?? 0
         self.dst = dst
-        self.delegate = delegate
+        
+        startHandler = onStart
+        progressHandler = onProgress
+        endHandler = onEnd
     }
     
     @objc fileprivate func tick() {
-        delegate?.onProgress(calculateProgress())
+        progressHandler?(calculateProgress())
     }
     
     private func calculateProgress() -> Double {
         guard let dstSize = dst.fileSize, srcSize != 0 else {
-//            timer.invalidate()
-//            return 1.0
             return 0.0
         }
         let result: Double = Double(dstSize) / Double(srcSize)
         
-        log.info("Progress (\(result)): \(srcSize) / \(dstSize)")
+        log.info("Progress (\(result)): \(dstSize) / \(srcSize)")
         return Double.minimum(result, 1)
     }
 }

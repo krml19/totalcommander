@@ -119,7 +119,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="SizeCellID" id="wG1-ts-a4C">
+                                                                        <tableCellView identifier="SizeCellID" id="wG1-ts-a4C" customClass="SizeCell" customModule="TotalCommander" customModuleProvider="target">
                                                                             <rect key="frame" x="323" y="1" width="196" height="40"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>

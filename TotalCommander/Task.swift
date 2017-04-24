@@ -52,7 +52,7 @@ open class Task: NSObject {
         }
     }
     
-    internal func done() {
+    func done() {
         
     }
     

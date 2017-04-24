@@ -27,18 +27,18 @@ class CopyTask: Task {
         configure(arguments: [from.rawValue, to.rawValue])
     }
     
-    func addProgress(_ to: ProgressProvider) -> CopyTask {
-        fileProgressProvider = FileProgressProvider(self.from, dst: self.to, delegate: to)
+    func addProgress(onStart: StartHandler? = nil, onProgress: ProgressHandler? = nil, onEnd: EndHandler? = nil) -> CopyTask {
+        fileProgressProvider = FileProgressProvider(self.from, dst: self.to, onStart: onStart, onProgress: onProgress, onEnd: onEnd)
         return self
     }
 
     func launch() {
         if to.exists {
             if AlertController.overrideFile() {
-                _run()
+                run()
             }
         } else {
-            _run()
+            run()
         }
     }
     
@@ -47,8 +47,8 @@ class CopyTask: Task {
         fileProgressProvider?.stop()
     }
     
-    private func _run() {
-        run()
+    override func run() {
+        super.run()
         fileProgressProvider?.start()
     }
     

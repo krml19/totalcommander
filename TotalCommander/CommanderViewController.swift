@@ -18,7 +18,6 @@ class CommanderViewController: ViewController {
             pathControl.isEditable = true
         }
     }
-    var progressProvider: FileProgressProvider!
     
     var dispatchFileSystemWatcher: DispatchFileSystemWatcher!
     var fileSystemWatcher: FileSystemWatcher!
@@ -51,6 +50,8 @@ class CommanderViewController: ViewController {
         tableView.target = self
         pathControl.action = #selector(pathControlAction(_:))
         path = Path(url: pathControl.url!)
+        let nib = NSNib(nibNamed: "SizeCell", bundle: nil)
+        tableView.register(nib, forIdentifier: "SizeCellID")
         
         tableView.doubleAction = #selector(tableViewDoubleClick(_:))
         
@@ -143,6 +144,10 @@ extension CommanderViewController: NSTableViewDelegate {
             cell.textField?.stringValue = text
             cell.imageView?.image = image ?? nil
             
+            if cell is SizeCell {
+                (cell as! SizeCell).progress.doubleValue = 0.5
+            }
+            
             return cell
         }
         return nil
@@ -166,20 +171,6 @@ extension CommanderViewController: NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
         items = path.sorted(by: tableView.sortDescriptors.first)
-    }
-}
-
-extension CommanderViewController: ProgressProvider {
-    func onProgress(_ progress: Double) {
-        log.debug("Progress: \(progress)")
-    }
-    
-    func onDone() {
-        log.debug("Done")
-    }
-    
-    func onStart() {
-        log.debug("Start")
     }
 }
 
@@ -243,10 +234,29 @@ extension CommanderViewController {
         CopyTask(src, to: dst, terminationHandler: { process in
             log.debug(process.terminationReason)
             log.debug(process.terminationStatus)
-        })
-            
-            .addProgress(self)
-            .launch()
+        }).addProgress(onStart: { _ -> Void? in
+            var indexes = IndexSet()
+            for item in 0...(self.items?.count)! - 1 {
+                if self.items?[item].url == dst.url {
+                    indexes.insert(item)
+                }
+            }
+            self.tableView.reloadData(forRowIndexes: indexes, columnIndexes: [2])
+            log.debug("Start")
+            return ()
+        }, onProgress: { (progress) -> Void? in
+            var indexes = IndexSet()
+            for item in 0...(self.items?.count)! - 1 {
+                if self.items?[item].url == dst.url {
+                    indexes.insert(item)
+                }
+            }
+            self.tableView.reloadData(forRowIndexes: indexes, columnIndexes: [2])
+            log.debug("Progress: \(progress)")
+            return ()
+        }, onEnd: { _ -> Void? in
+            log.debug("Done")
+        }).launch()
         
     }
     

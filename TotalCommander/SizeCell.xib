@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView id="jSh-14-1KX" customClass="SizeCell" customModule="TotalCommander" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="103" height="21"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-6p-dnD">
+                    <rect key="frame" x="0.0" y="4" width="103" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="rhb-ID-jJ2">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <progressIndicator hidden="YES" wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-uB-lvz">
+                    <rect key="frame" x="0.0" y="2" width="100" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="bEH-cz-sST"/>
+                    </constraints>
+                </progressIndicator>
+            </subviews>
+            <constraints>
+                <constraint firstItem="GTz-6p-dnD" firstAttribute="centerX" secondItem="jSh-14-1KX" secondAttribute="centerX" id="0vV-l4-lVw"/>
+                <constraint firstItem="5MW-uB-lvz" firstAttribute="centerY" secondItem="GTz-6p-dnD" secondAttribute="centerY" id="4MF-0s-IxA"/>
+                <constraint firstItem="GTz-6p-dnD" firstAttribute="top" secondItem="jSh-14-1KX" secondAttribute="top" id="EcT-z9-jRX"/>
+                <constraint firstItem="GTz-6p-dnD" firstAttribute="leading" secondItem="jSh-14-1KX" secondAttribute="leading" constant="2" id="Vqk-fT-rbE"/>
+                <constraint firstItem="5MW-uB-lvz" firstAttribute="leading" secondItem="jSh-14-1KX" secondAttribute="leading" id="wIg-0R-OCd"/>
+            </constraints>
+            <connections>
+                <outlet property="progress" destination="5MW-uB-lvz" id="3eX-sG-rhm"/>
+                <outlet property="textField" destination="GTz-6p-dnD" id="qm4-yG-Ntd"/>
+            </connections>
+            <point key="canvasLocation" x="152.5" y="182.5"/>
+        </tableCellView>
+    </objects>
+</document>
