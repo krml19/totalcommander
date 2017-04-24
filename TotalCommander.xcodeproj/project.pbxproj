@@ -10,6 +10,8 @@
 		09FAC1AD7501BF09FF5C0434 /* Pods_TotalCommanderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EB27FC4C7C59F3BFF5B9EE /* Pods_TotalCommanderTests.framework */; };
 		3ADDC245C79D45BC2A4F3632 /* Pods_TotalCommander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C82D908F5A313BC87DDFFFF /* Pods_TotalCommander.framework */; };
 		4E3EFB10C6137B8907E95E2A /* Pods_TotalCommanderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A949CF17C301E83BF03291 /* Pods_TotalCommanderUITests.framework */; };
+		F217491C1EAE1F4C00655B35 /* Copy.command in Resources */ = {isa = PBXBuildFile; fileRef = F217491B1EAE1D0200655B35 /* Copy.command */; };
+		F217491E1EAE235600655B35 /* Move.command in Resources */ = {isa = PBXBuildFile; fileRef = F217491D1EAE22EA00655B35 /* Move.command */; };
 		F2184E711E9C1AB6006E0BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2184E701E9C1AB6006E0BDB /* AppDelegate.swift */; };
 		F2184E731E9C1AB6006E0BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2184E721E9C1AB6006E0BDB /* ViewController.swift */; };
 		F2184E751E9C1AB6006E0BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2184E741E9C1AB6006E0BDB /* Assets.xcassets */; };
@@ -59,6 +61,10 @@
 		C8A34BF4A65FB539EC699EFB /* Pods-TotalCommander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TotalCommander.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TotalCommander/Pods-TotalCommander.debug.xcconfig"; sourceTree = "<group>"; };
 		CFDA1CE4ED5A369599BD71C3 /* Pods-TotalCommanderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TotalCommanderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TotalCommanderTests/Pods-TotalCommanderTests.release.xcconfig"; sourceTree = "<group>"; };
 		E7845DC732AA4EEA34BD26ED /* Pods-TotalCommander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TotalCommander.release.xcconfig"; path = "Pods/Target Support Files/Pods-TotalCommander/Pods-TotalCommander.release.xcconfig"; sourceTree = "<group>"; };
+		F217491B1EAE1D0200655B35 /* Copy.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Copy.command; sourceTree = "<group>"; };
+		F217491D1EAE22EA00655B35 /* Move.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Move.command; sourceTree = "<group>"; };
+		F217491F1EAE23AC00655B35 /* Paste.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Paste.command; sourceTree = "<group>"; };
+		F21749201EAE23B900655B35 /* Delete.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Delete.command; sourceTree = "<group>"; };
 		F2184E6D1E9C1AB6006E0BDB /* TotalCommander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TotalCommander.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2184E701E9C1AB6006E0BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2184E721E9C1AB6006E0BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +248,10 @@
 		F25D25A61EA5444F00074EE6 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				F217491B1EAE1D0200655B35 /* Copy.command */,
+				F217491D1EAE22EA00655B35 /* Move.command */,
+				F217491F1EAE23AC00655B35 /* Paste.command */,
+				F21749201EAE23B900655B35 /* Delete.command */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -378,6 +388,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F217491E1EAE235600655B35 /* Move.command in Resources */,
+				F217491C1EAE1F4C00655B35 /* Copy.command in Resources */,
 				F2184E751E9C1AB6006E0BDB /* Assets.xcassets in Resources */,
 				F23AAAAD1EA7D54D00E995B2 /* Commander.storyboard in Resources */,
 				F2CCDAFC1E9C1D3800030116 /* Localizable.strings in Resources */,
@@ -714,6 +726,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.TotalCommander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				SYMROOT = "~/Build";
 			};
 			name = Debug;
 		};
@@ -730,6 +743,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.TotalCommander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				SYMROOT = "~/Build";
 			};
 			name = Release;
 		};

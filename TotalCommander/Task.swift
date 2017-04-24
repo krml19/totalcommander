@@ -8,12 +8,12 @@
 
 import Cocoa
 
-class Task: NSObject {
-    enum TaskType: String {
-        case copy = "copy"
-        case remove = "remove"
-        case paste = "paste"
-        case create = "create"
+open class Task: NSObject {
+    public enum TaskType: String {
+        case copy = "Copy"
+        case remove = "Remove"
+        case paste = "Paste"
+        case create = "Create"
     }
     
     let type: TaskType
@@ -28,7 +28,7 @@ class Task: NSObject {
         return process.isRunning
     }
     
-    required init(_ type: TaskType) {
+    required public init(_ type: TaskType) {
         self.type = type
     }
     
@@ -46,7 +46,7 @@ class Task: NSObject {
         
         taskQueue.async {
             guard let path = Bundle.main.path(forResource: self.type.rawValue ,ofType:"command") else {
-                print("Unable to locate \(self.type.rawValue).command")
+                log.error("Unable to locate \(self.type.rawValue).command")
                 return
             }
             
@@ -55,8 +55,16 @@ class Task: NSObject {
             self.process.arguments = self.arguments
             
             self.terminationHandler = self.process.terminationHandler
+            
+            self.process.standardError = log.destinations.first
+            self.process.standardInput = log.destinations.first
+            self.process.standardOutput = log.destinations.first
+            
             self.process.launch()
             self.process.waitUntilExit()
+            
+            
+            
         }
     }
 }

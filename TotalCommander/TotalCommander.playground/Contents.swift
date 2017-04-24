@@ -61,10 +61,3 @@ do {
     error
 }
 
-
-
-//let delegate = DispatchFileSystemWatcherDelegate
-
-//let dispatch = path.watch2(.All, queue: .default, delegate: <#T##DispatchFileSystemWatcherDelegate?#>, callback: <#T##((DispatchFileSystemWatcher) -> Void)?##((DispatchFileSystemWatcher) -> Void)?##(DispatchFileSystemWatcher) -> Void#>)
-
-

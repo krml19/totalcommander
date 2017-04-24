@@ -74,23 +74,24 @@ class CommanderViewController: ViewController {
     func tableViewDoubleClick(_ tableView: NSTableView) {
         guard tableView.selectedRow >= 0 else { return }
         
-        let selectedPath = items?[tableView.selectedRow]
+//        let selectedPath = items?[tableView.selectedRow]
         
-        if (selectedPath?.isDirectory)! {
-            path = selectedPath
-        } else {
-            let src = Path("/Volumes/SanDisk/Archive.zip")
-            let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
-            
-            DispatchQueue.global().async {
-                src.copy(dst)
-            }
-            
-            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
-        }
+//        if (selectedPath?.isDirectory)! {
+//            path = selectedPath
+//        } else {
+//            let src = Path("/Volumes/SanDisk/Archive.zip")
+//            let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
+//            
+//            DispatchQueue.global().async {
+//                src.copy(dst)
+//            }
+//            
+//            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
+//        }
+        
+        copyTask()
     }
 }
-
 
 
 extension CommanderViewController: NSTableViewDelegate {
@@ -230,4 +231,21 @@ extension CommanderViewController {
         log.debug("willBeginAt")
     }
     
+}
+
+// operations on files
+extension CommanderViewController {
+    func copyTask() {
+        let task = Task(.copy)
+        
+        let src = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
+        let dst = Path("/Users/marcinkarmelita/Desktop/Archive_copy.zip")
+        
+        task.configure(arguments: [src.rawValue, dst.rawValue])
+        task.terminationHandler = {
+            log.verbose($0.terminationReason)
+        }
+        
+        task.run()
+    }
 }

@@ -105,7 +105,6 @@ extension MainMenu {
             item.title = item.identifier?.localized() ?? "None"
             log.info(item.toolTip)
             
-            
             log.debug(item.accessibilityIdentifier())
             
             if item.hasSubmenu {
@@ -113,7 +112,6 @@ extension MainMenu {
                     
                 }
                 
-            
                 log.error(item.identifier)
                 updateLanguage(menu: item.submenu!)
             }
