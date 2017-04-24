@@ -22,7 +22,7 @@ class CommanderViewController: ViewController {
     
     var dispatchFileSystemWatcher: DispatchFileSystemWatcher!
     var fileSystemWatcher: FileSystemWatcher!
-
+    
     var path: Path! = Path() {
         didSet {
             pathControl.url = path.url
@@ -74,20 +74,20 @@ class CommanderViewController: ViewController {
     func tableViewDoubleClick(_ tableView: NSTableView) {
         guard tableView.selectedRow >= 0 else { return }
         
-//        let selectedPath = items?[tableView.selectedRow]
+        //        let selectedPath = items?[tableView.selectedRow]
         
-//        if (selectedPath?.isDirectory)! {
-//            path = selectedPath
-//        } else {
-//            let src = Path("/Volumes/SanDisk/Archive.zip")
-//            let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
-//            
-//            DispatchQueue.global().async {
-//                src.copy(dst)
-//            }
-//            
-//            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
-//        }
+        //        if (selectedPath?.isDirectory)! {
+        //            path = selectedPath
+        //        } else {
+        //            let src = Path("/Volumes/SanDisk/Archive.zip")
+        //            let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
+        //
+        //            DispatchQueue.global().async {
+        //                src.copy(dst)
+        //            }
+        //
+        //            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
+        //        }
         
         copyTask()
     }
@@ -179,7 +179,7 @@ extension CommanderViewController: ProgressProvider {
     }
     
     func onStart() {
-        
+        log.debug("Start")
     }
 }
 
@@ -193,7 +193,7 @@ extension CommanderViewController {
         
         return items?[row].isDirectory == true
     }
-
+    
     func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
         log.info(dropOperation)
         
@@ -236,14 +236,32 @@ extension CommanderViewController {
 // operations on files
 extension CommanderViewController {
     func copyTask() {
-        let task = Task(.copy)
+        
+        let src = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
+        let dst = Path("/Users/marcinkarmelita/Desktop/Archive_copy.zip")
+        
+        CopyTask(src, to: dst, terminationHandler: { process in
+            log.debug(process.terminationReason)
+            log.debug(process.terminationStatus)
+        })
+            
+            .addProgress(self)
+            .launch()
+        
+    }
+    
+    func moveTask() {
+        let task = Task(.move)
         
         let src = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
         let dst = Path("/Users/marcinkarmelita/Desktop/Archive_copy.zip")
         
         task.configure(arguments: [src.rawValue, dst.rawValue])
-        task.terminationHandler = {
-            log.verbose($0.terminationReason)
+        task.terminationHandler = { process in
+            DispatchQueue.main.async(execute: {
+                log.debug(process.terminationReason)
+                log.debug(process.terminationStatus)
+            })
         }
         
         task.run()

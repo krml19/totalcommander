@@ -18,6 +18,7 @@
 		F2184E781E9C1AB6006E0BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2184E761E9C1AB6006E0BDB /* Main.storyboard */; };
 		F2184E831E9C1AB7006E0BDB /* TotalCommanderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2184E821E9C1AB7006E0BDB /* TotalCommanderTests.swift */; };
 		F2184E8E1E9C1AB7006E0BDB /* TotalCommanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2184E8D1E9C1AB7006E0BDB /* TotalCommanderUITests.swift */; };
+		F221AD2A1EAE68C4003D405F /* CopyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD291EAE68C4003D405F /* CopyTask.swift */; };
 		F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */; };
 		F23AAAAA1EA7D53200E995B2 /* CommanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */; };
 		F23AAAAD1EA7D54D00E995B2 /* Commander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */; };
@@ -77,6 +78,7 @@
 		F2184E891E9C1AB7006E0BDB /* TotalCommanderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TotalCommanderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2184E8D1E9C1AB7006E0BDB /* TotalCommanderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCommanderUITests.swift; sourceTree = "<group>"; };
 		F2184E8F1E9C1AB7006E0BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F221AD291EAE68C4003D405F /* CopyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyTask.swift; sourceTree = "<group>"; };
 		F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Tasks.swift"; sourceTree = "<group>"; };
 		F2347FE01EAB570B00D4311B /* TotalCommander.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TotalCommander.playground; sourceTree = "<group>"; };
 		F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanderViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +176,7 @@
 				F25D25A31EA537C000074EE6 /* Resources */,
 				F25D25A21EA537B400074EE6 /* Main menu */,
 				F25D25A01EA5375E00074EE6 /* Language.swift */,
-				F25D25A41EA5443600074EE6 /* Task.swift */,
+				F221AD2B1EAE7762003D405F /* Task */,
 				F23AAAAB1EA7D53B00E995B2 /* Commander */,
 				F23AAAB01EA7F3B100E995B2 /* Extensions */,
 				F217491A1EAC82E200655B35 /* Progress */,
@@ -199,6 +201,15 @@
 				F2184E8F1E9C1AB7006E0BDB /* Info.plist */,
 			);
 			path = TotalCommanderUITests;
+			sourceTree = "<group>";
+		};
+		F221AD2B1EAE7762003D405F /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				F25D25A41EA5443600074EE6 /* Task.swift */,
+				F221AD291EAE68C4003D405F /* CopyTask.swift */,
+			);
+			name = Task;
 			sourceTree = "<group>";
 		};
 		F23AAAAB1EA7D53B00E995B2 /* Commander */ = {
@@ -550,6 +561,7 @@
 				F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */,
 				F23AAAAA1EA7D53200E995B2 /* CommanderViewController.swift in Sources */,
 				F280C1E61EABECB0004E0BEB /* FileProgressProvider.swift in Sources */,
+				F221AD2A1EAE68C4003D405F /* CopyTask.swift in Sources */,
 				F2819C851EAAA4B9000FBE8E /* FileKit+Handle.swift in Sources */,
 				F280C1DF1EAB5E1D004E0BEB /* AlertController.swift in Sources */,
 				F25D259F1EA5375200074EE6 /* MainMenu.swift in Sources */,

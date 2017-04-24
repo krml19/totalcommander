@@ -9,10 +9,10 @@
 import Cocoa
 import FileKit
 
-public protocol ProgressProvider {
+@objc public protocol ProgressProvider {
     func onProgress(_ progress: Double)
-    func onDone()
-    func onStart()
+    @objc optional func onDone()
+    @objc optional func onStart()
 }
 
 open class FileProgressProvider {
@@ -27,7 +27,12 @@ open class FileProgressProvider {
     
     public func start() {
         timer.fire()
-        delegate?.onStart()
+        delegate?.onStart?()
+    }
+    
+    public func stop() {
+        timer.invalidate()
+        delegate?.onDone?()
     }
     
     init(_ src: Path, dst: Path, delegate: ProgressProvider? = nil) {
@@ -37,13 +42,7 @@ open class FileProgressProvider {
     }
     
     @objc fileprivate func tick() {
-        let progress = calculateProgress()
-        if progress == 1.0 {
-            delegate?.onDone()
-            timer.invalidate()
-        } else {
-            delegate?.onProgress(progress)
-        }
+        delegate?.onProgress(calculateProgress())
     }
     
     private func calculateProgress() -> Double {

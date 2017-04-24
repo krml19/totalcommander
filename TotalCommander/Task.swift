@@ -8,12 +8,15 @@
 
 import Cocoa
 
+typealias TerminationHandler = ((Process) -> Swift.Void)?
 open class Task: NSObject {
+    
     public enum TaskType: String {
         case copy = "Copy"
         case remove = "Remove"
         case paste = "Paste"
         case create = "Create"
+        case move = "Move"
     }
     
     let type: TaskType
@@ -22,13 +25,13 @@ open class Task: NSObject {
     private var process: Process!
     private var qos = DispatchQoS.QoSClass.background
     
-    open var terminationHandler: ((Process) -> Swift.Void)?
+    var terminationHandler: TerminationHandler
     
     dynamic var isRunning: Bool {
         return process.isRunning
     }
     
-    required public init(_ type: TaskType) {
+    public init(_ type: TaskType) {
         self.type = type
     }
     
@@ -38,7 +41,19 @@ open class Task: NSObject {
     }
     
     func interrupt() {
-        self.process.interrupt()
+        if process.isRunning {
+            self.process.interrupt()
+        }
+    }
+    
+    func runIf(_ condition: Bool) {
+        if condition {
+            run()
+        }
+    }
+    
+    internal func done() {
+        
     }
     
     func run() {
@@ -53,18 +68,20 @@ open class Task: NSObject {
             self.process = Process()
             self.process.launchPath = path
             self.process.arguments = self.arguments
-            
-            self.terminationHandler = self.process.terminationHandler
-            
-            self.process.standardError = log.destinations.first
-            self.process.standardInput = log.destinations.first
-            self.process.standardOutput = log.destinations.first
+
+            self.process.terminationHandler = { [unowned self] handler in
+                log.info(handler.terminationStatus)
+                
+                DispatchQueue.main.async(execute: {
+                    self.done()
+                    if self.terminationHandler != nil {
+                        self.terminationHandler!(handler)
+                    }
+                })
+            }
             
             self.process.launch()
             self.process.waitUntilExit()
-            
-            
-            
         }
     }
 }
