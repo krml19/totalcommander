@@ -25,14 +25,16 @@ class CommanderViewController: ViewController {
     var path: Path! = Path() {
         didSet {
             pathControl.url = path.url
-            items = path.sorted(by: tableView.sortDescriptors.first)
+            items = path.sorted(by: tableView.sortDescriptors.first).map({ (path) -> FileItem in
+                return FileItem(path)
+            })
             
             fileSystemWatcher = path.watch(0.5, queue: DispatchQueue.global(qos: .userInteractive)) { fileSystemEvent in
                 log.info(fileSystemEvent.path.fileSize ?? "--")
             }
         }
     }
-    var items: [Path]? = [] {
+    var items: [FileItem]? = [] {
         didSet {
             tableView.reloadData()
         }
@@ -114,29 +116,19 @@ extension CommanderViewController: NSTableViewDelegate {
         var text: String = ""
         var cellIdentifier: String = ""
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .long
-        
         guard let item = items?[row] else {
             return nil
         }
         
         if tableColumn == tableView.tableColumns[0] {
-            do {
-                let values = try item.url.resourceValues(forKeys: [URLResourceKey.effectiveIconKey, URLResourceKey.customIconKey])
-                image = values.customIcon ?? values.effectiveIcon as? NSImage
-            } catch  {
-                log.error(error)
-            }
-            
-            text = item.fileName
+            text = item.filename
+            image = item.image
             cellIdentifier = CellIdentifiers.NameCell
         } else if tableColumn == tableView.tableColumns[1] {
-            text = dateFormatter.string(from: item.modificationDate ?? item.creationDate ?? Date())
+            text = item.modificationDate
             cellIdentifier = CellIdentifiers.DateCell
         } else if tableColumn == tableView.tableColumns[2] {
-            text = item.isDirectory ? Formatter.Size.Empty : String(describing: item.fileSize!) + "loc_bytes".localized()
+            text = item.size
             cellIdentifier = CellIdentifiers.SizeCell
         }
         
@@ -145,7 +137,7 @@ extension CommanderViewController: NSTableViewDelegate {
             cell.imageView?.image = image ?? nil
             
             if cell is SizeCell {
-                (cell as! SizeCell).progress.doubleValue = 0.5
+                (cell as! SizeCell).configure(item)
             }
             
             return cell
@@ -170,59 +162,59 @@ extension CommanderViewController: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
-        items = path.sorted(by: tableView.sortDescriptors.first)
+//        items = path.sorted(by: tableView.sortDescriptors.first)
     }
 }
 
 // drag
-extension CommanderViewController {
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
-        log.debug(row)
-        if let size = items?.count, size >= row {
-            return true
-        }
-        
-        return items?[row].isDirectory == true
-    }
-    
-    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
-        log.info(dropOperation)
-        
-        if let size = items?.count, size >= row {
-            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
-            return .move
-        }
-        
-        if let item = items?[row], item.isDirectory {
-            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
-        } else {
-            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.none
-        }
-        
-        return NSDragOperation.move
-    }
-    
-    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
-        log.debug("Ended at")
-        
-    }
-    
-    func tableView(_ tableView: NSTableView, updateDraggingItemsForDrag draggingInfo: NSDraggingInfo) {
-        let pasteboard = draggingInfo.draggingPasteboard()
-        if let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
-            log.info(urls)
-        }
-    }
-    
-    func tableView(_ tableView: NSTableView, didDrag tableColumn: NSTableColumn) {
-        log.debug("Did drag")
-    }
-    
-    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
-        log.debug("willBeginAt")
-    }
-    
-}
+//extension CommanderViewController {
+//    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+//        log.debug(row)
+//        if let size = items?.count, size >= row {
+//            return true
+//        }
+//        
+//        return items?[row].isDirectory == true
+//    }
+//    
+//    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+//        log.info(dropOperation)
+//        
+//        if let size = items?.count, size >= row {
+//            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
+//            return .move
+//        }
+//        
+//        if let item = items?[row], item.isDirectory {
+//            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
+//        } else {
+//            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.none
+//        }
+//        
+//        return NSDragOperation.move
+//    }
+//    
+//    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+//        log.debug("Ended at")
+//        
+//    }
+//    
+//    func tableView(_ tableView: NSTableView, updateDraggingItemsForDrag draggingInfo: NSDraggingInfo) {
+//        let pasteboard = draggingInfo.draggingPasteboard()
+//        if let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
+//            log.info(urls)
+//        }
+//    }
+//    
+//    func tableView(_ tableView: NSTableView, didDrag tableColumn: NSTableColumn) {
+//        log.debug("Did drag")
+//    }
+//    
+//    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
+//        log.debug("willBeginAt")
+//    }
+//    
+//}
 
 // operations on files
 extension CommanderViewController {
@@ -235,27 +227,35 @@ extension CommanderViewController {
             log.debug(process.terminationReason)
             log.debug(process.terminationStatus)
         }).addProgress(onStart: { _ -> Void? in
-            var indexes = IndexSet()
-            for item in 0...(self.items?.count)! - 1 {
-                if self.items?[item].url == dst.url {
-                    indexes.insert(item)
-                }
+            guard let item: FileItem = self.items?.first(where: { element -> Bool in
+                return element.url == dst.url
+            }) else {
+                log.debug("Start")
+                return ()
             }
-            self.tableView.reloadData(forRowIndexes: indexes, columnIndexes: [2])
-            log.debug("Start")
+            
+            item.hideProgress.onNext(false)
             return ()
         }, onProgress: { (progress) -> Void? in
-            var indexes = IndexSet()
-            for item in 0...(self.items?.count)! - 1 {
-                if self.items?[item].url == dst.url {
-                    indexes.insert(item)
-                }
+            guard let item: FileItem = self.items?.first(where: { element -> Bool in
+                return element.url == dst.url
+            }) else {
+                log.debug("Progress: \(progress)")
+                return ()
             }
-            self.tableView.reloadData(forRowIndexes: indexes, columnIndexes: [2])
-            log.debug("Progress: \(progress)")
+
+            item.progressValue.onNext(progress)
             return ()
         }, onEnd: { _ -> Void? in
-            log.debug("Done")
+            guard let item: FileItem = self.items?.first(where: { element -> Bool in
+                return element.url == dst.url
+            }) else {
+                log.debug("Done")
+                return ()
+            }
+            
+            item.hideProgress.onNext(true)
+            return ()
         }).launch()
         
     }

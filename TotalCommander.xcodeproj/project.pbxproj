@@ -21,6 +21,8 @@
 		F221AD2A1EAE68C4003D405F /* CopyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD291EAE68C4003D405F /* CopyTask.swift */; };
 		F221AD2E1EAE9D49003D405F /* SizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD2D1EAE9D49003D405F /* SizeCell.swift */; };
 		F221AD301EAE9D5E003D405F /* SizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F221AD2F1EAE9D5E003D405F /* SizeCell.xib */; };
+		F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD311EAEA7CC003D405F /* FileItem.swift */; };
+		F221AD351EAEAC5D003D405F /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD341EAEAC5D003D405F /* TableCellView.swift */; };
 		F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */; };
 		F23AAAAA1EA7D53200E995B2 /* CommanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */; };
 		F23AAAAD1EA7D54D00E995B2 /* Commander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */; };
@@ -83,6 +85,8 @@
 		F221AD291EAE68C4003D405F /* CopyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopyTask.swift; sourceTree = "<group>"; };
 		F221AD2D1EAE9D49003D405F /* SizeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCell.swift; sourceTree = "<group>"; };
 		F221AD2F1EAE9D5E003D405F /* SizeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SizeCell.xib; sourceTree = "<group>"; };
+		F221AD311EAEA7CC003D405F /* FileItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileItem.swift; sourceTree = "<group>"; };
+		F221AD341EAEAC5D003D405F /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Tasks.swift"; sourceTree = "<group>"; };
 		F2347FE01EAB570B00D4311B /* TotalCommander.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TotalCommander.playground; sourceTree = "<group>"; };
 		F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanderViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +229,17 @@
 			name = Alert;
 			sourceTree = "<group>";
 		};
+		F221AD331EAEAC46003D405F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F221AD2D1EAE9D49003D405F /* SizeCell.swift */,
+				F221AD2F1EAE9D5E003D405F /* SizeCell.xib */,
+				F221AD311EAEA7CC003D405F /* FileItem.swift */,
+				F221AD341EAEAC5D003D405F /* TableCellView.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		F23AAAAB1EA7D53B00E995B2 /* Commander */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,8 +266,7 @@
 			children = (
 				F25D259E1EA5375200074EE6 /* MainMenu.swift */,
 				F25D25A71EA55DF400074EE6 /* Defaults.swift */,
-				F221AD2D1EAE9D49003D405F /* SizeCell.swift */,
-				F221AD2F1EAE9D5E003D405F /* SizeCell.xib */,
+				F221AD331EAEAC46003D405F /* Cell */,
 			);
 			name = "Main menu";
 			sourceTree = "<group>";
@@ -571,6 +585,7 @@
 				F23AAAAF1EA7EEB700E995B2 /* FileKit+Sort.swift in Sources */,
 				F2184E731E9C1AB6006E0BDB /* ViewController.swift in Sources */,
 				F25D25A11EA5375E00074EE6 /* Language.swift in Sources */,
+				F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */,
 				F25D25A51EA5443600074EE6 /* Task.swift in Sources */,
 				F221AD2E1EAE9D49003D405F /* SizeCell.swift in Sources */,
 				F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */,
@@ -582,6 +597,7 @@
 				F280C1DF1EAB5E1D004E0BEB /* AlertController.swift in Sources */,
 				F25D259F1EA5375200074EE6 /* MainMenu.swift in Sources */,
 				F280C1E11EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift in Sources */,
+				F221AD351EAEAC5D003D405F /* TableCellView.swift in Sources */,
 				F280C1E31EAB732E004E0BEB /* CommanderViewController+Progress.swift in Sources */,
 				F2184E711E9C1AB6006E0BDB /* AppDelegate.swift in Sources */,
 			);
