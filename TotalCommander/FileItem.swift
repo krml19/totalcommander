@@ -12,7 +12,7 @@ import RxCocoa
 import FileKit
 
 class FileItem: NSObject {
-    private var path: Path
+    public private(set) var path: Path
     var hideProgress: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: true)
     var progressValue: BehaviorSubject<Double> = BehaviorSubject<Double>(value: 0.0)
     
@@ -48,3 +48,4 @@ class FileItem: NSObject {
         }
     }
 }
+

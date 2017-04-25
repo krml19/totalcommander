@@ -9,26 +9,31 @@
 import Foundation
 import FileKit
 
-extension Path {
-    enum SortingOptions: String {
-        case name
-        case modificationDate
-        case size
-        
-        static func indexOf(index: Int) -> SortingOptions {
-            switch index {
-            case 0:
-                return .name
-            case 1:
-                return .modificationDate
-            case 2:
-                return .size
-            default:
-                return .name
-            }
+protocol Sortable {
+    associatedtype T
+    func sorted(by sortDescriptor: NSSortDescriptor?) -> [T]
+}
+
+enum SortingOptions: String {
+    case name
+    case modificationDate
+    case size
+    
+    static func indexOf(index: Int) -> SortingOptions {
+        switch index {
+        case 0:
+            return .name
+        case 1:
+            return .modificationDate
+        case 2:
+            return .size
+        default:
+            return .name
         }
     }
-    
+}
+
+extension Path: Sortable {
     func sorted(by sortDescriptor: NSSortDescriptor?) -> [Path] {
         guard let sortDescriptor = sortDescriptor else { return children() }
         return sorted(by: sortDescriptor.key, ascending: sortDescriptor.ascending)
@@ -59,3 +64,4 @@ extension Path {
         return self.children().sorted(by: by)
     }
 }
+

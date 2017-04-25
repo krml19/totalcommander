@@ -32,29 +32,3 @@ extension Path {
         return self.isDirectory ? .directory : .file
     }
 }
-
-extension Path {
-    func defaultHandler() {
-        switch self.type {
-        case .file:
-            handleFile()
-        case .directory:
-            handleDirectory()
-        case .app:
-            handleApplication()
-        }
-        
-    }
-    private func handleDirectory() {
-        
-    }
-    
-    private func handleApplication() {
-        
-    }
-    
-    private func handleFile() {
-        
-    }
-    
-}

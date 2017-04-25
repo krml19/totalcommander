@@ -58,7 +58,7 @@ class CommanderViewController: ViewController {
         tableView.doubleAction = #selector(tableViewDoubleClick(_:))
         
         for item in 0...2 {
-            tableView.tableColumns[item].sortDescriptorPrototype = NSSortDescriptor(key: Path.SortingOptions.indexOf(index: item).rawValue, ascending: true)
+            tableView.tableColumns[item].sortDescriptorPrototype = NSSortDescriptor(key: SortingOptions.indexOf(index: item).rawValue, ascending: true)
         }
     }
     
@@ -77,7 +77,18 @@ class CommanderViewController: ViewController {
     func tableViewDoubleClick(_ tableView: NSTableView) {
         guard tableView.selectedRow >= 0 else { return }
         
-        //        let selectedPath = items?[tableView.selectedRow]
+        guard let selectedPath = items?[tableView.selectedRow] else {
+            return
+        }
+        
+        switch selectedPath.path.type {
+        case .directory:
+            path = selectedPath.path
+            break
+        case .app, .file:
+            NSWorkspace.shared().openFile(selectedPath.path.rawValue)
+            break
+        }
         
         //        if (selectedPath?.isDirectory)! {
         //            path = selectedPath
@@ -92,7 +103,7 @@ class CommanderViewController: ViewController {
         //            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
         //        }
         
-        copyTask()
+//        copyTask()
     }
 }
 
@@ -162,7 +173,9 @@ extension CommanderViewController: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
-//        items = path.sorted(by: tableView.sortDescriptors.first)
+        items = path.sorted(by: tableView.sortDescriptors.first).map({ path -> FileItem in
+            return FileItem(path)
+        })
     }
 }
 
