@@ -9,10 +9,10 @@
 echo "*********************************"
 echo "Copy file to pastboard"
 echo "From: " "${1}"
-echo "To: " "${2}"
+echo "To: Pasteboard"
 echo "*********************************"
 
-cp "${1}" "${2}"
+pbcopy < "${1}"
 
 echo "*********************************"
 echo "Copy finished"

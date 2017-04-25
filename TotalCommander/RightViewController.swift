@@ -1,0 +1,18 @@
+//
+//  RightViewController.swift
+//  TotalCommander
+//
+//  Created by Marcin Karmelita on 25/04/17.
+//  Copyright © 2017 Marcin Karmelita. All rights reserved.
+//
+
+import Cocoa
+
+class RightViewController: CommanderViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do view setup here.
+    }
+    
+}

@@ -140,6 +140,11 @@
                                                                     </prototypeCellViews>
                                                                 </tableColumn>
                                                             </tableColumns>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="Ilf-vO-ysz" id="XoY-TG-se5"/>
+                                                                <outlet property="delegate" destination="Ilf-vO-ysz" id="VT7-rv-You"/>
+                                                                <outlet property="menu" destination="N8n-xg-TEJ" id="O9I-sN-qkk"/>
+                                                            </connections>
                                                         </tableView>
                                                     </subviews>
                                                 </clipView>
@@ -213,6 +218,33 @@
                     </connections>
                 </viewController>
                 <customObject id="k9r-a2-0N4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu title="Show" id="N8n-xg-TEJ" customClass="ContextualMenu" customModule="TotalCommander" customModuleProvider="target">
+                    <items>
+                        <menuItem title="Copy" keyEquivalent="c" id="yfb-sS-bJ6">
+                            <connections>
+                                <action selector="copyAction:" target="N8n-xg-TEJ" id="buk-ja-U7I"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Paste" keyEquivalent="v" id="QoY-h7-f7z">
+                            <connections>
+                                <action selector="pasteAction:" target="N8n-xg-TEJ" id="hby-8O-7xx"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Delete" id="P1D-G7-m77">
+                            <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                            <connections>
+                                <action selector="deleteAction:" target="N8n-xg-TEJ" id="zXh-GW-bOX"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                    <connections>
+                        <outlet property="copyItem" destination="yfb-sS-bJ6" id="tzY-JQ-knp"/>
+                        <outlet property="deleteItem" destination="P1D-G7-m77" id="g2p-50-Oje"/>
+                        <outlet property="pasteItem" destination="QoY-h7-f7z" id="SXP-AP-A6L"/>
+                    </connections>
+                </menu>
             </objects>
             <point key="canvasLocation" x="248.5" y="146"/>
         </scene>

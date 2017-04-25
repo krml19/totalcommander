@@ -10,11 +10,11 @@
         <scene sceneID="JPo-4y-FX3">
             <objects>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
-                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6" customClass="MainMenu" customModule="TotalCommander" customModuleProvider="target">
                         <items>
                             <menuItem title="TotalCommander" toolTip="Hello" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="TotalCommander" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="TotalCommander" systemMenu="apple" id="uQy-DD-JDr" customClass="MainMenu" customModule="TotalCommander" customModuleProvider="target">
                                     <items>
                                         <menuItem title="About TotalCommander" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -67,7 +67,7 @@
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                             <connections>
-                                                <action selector="chanlang:" target="Voe-Tx-rLC" id="aYk-xd-Xud"/>
+                                                <action selector="openDocument:" target="Ady-hI-5gd" id="tSD-21-tzx"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open Recent" id="tXI-mr-wws">
@@ -666,8 +666,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Total Commander" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -679,12 +679,12 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="74" y="373"/>
         </scene>
-        <!--Split View Controller-->
+        <!--View Controller-->
         <scene sceneID="O7u-rs-sZO">
             <objects>
-                <splitViewController id="vbg-8u-f81" sceneMemberID="viewController">
+                <splitViewController id="vbg-8u-f81" customClass="ViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="Svu-XK-W6c"/>
                         <splitViewItem id="zHv-CD-6BB"/>
@@ -700,7 +700,7 @@
                 </splitViewController>
                 <customObject id="rhL-76-aPY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="707"/>
+            <point key="canvasLocation" x="74" y="849"/>
         </scene>
         <!--Commander-->
         <scene sceneID="6iA-Xf-Zua">
@@ -708,7 +708,7 @@
                 <controllerPlaceholder storyboardName="Commander" id="fW8-yO-pXO" sceneMemberID="viewController"/>
                 <customObject id="Hbx-eh-jKH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="609"/>
+            <point key="canvasLocation" x="497" y="787"/>
         </scene>
         <!--Commander-->
         <scene sceneID="M3I-NT-yoM">
@@ -716,7 +716,7 @@
                 <controllerPlaceholder storyboardName="Commander" id="G1F-lx-RkN" sceneMemberID="viewController"/>
                 <customObject id="HlA-wK-WE4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="782"/>
+            <point key="canvasLocation" x="497" y="930"/>
         </scene>
     </scenes>
 </document>

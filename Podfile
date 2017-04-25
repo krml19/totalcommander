@@ -11,6 +11,7 @@ target 'TotalCommander' do
   pod 'SwiftyBeaver'
   pod 'RxSwift',    '~> 3.0'
   pod 'RxCocoa',    '~> 3.0'
+  pod 'RxGesture'
   
   target 'TotalCommanderTests' do
     inherit! :search_paths

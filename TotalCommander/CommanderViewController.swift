@@ -8,8 +8,11 @@
 
 import Cocoa
 import FileKit
+import RxSwift
+import RxCocoa
+import RxGesture
 
-class CommanderViewController: ViewController {
+class CommanderViewController: NSViewController {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var statusLabel: NSTextField!
@@ -54,8 +57,9 @@ class CommanderViewController: ViewController {
         path = Path(url: pathControl.url!)
         let nib = NSNib(nibNamed: "SizeCell", bundle: nil)
         tableView.register(nib, forIdentifier: "SizeCellID")
-        
         tableView.doubleAction = #selector(tableViewDoubleClick(_:))
+        
+        
         
         for item in 0...2 {
             tableView.tableColumns[item].sortDescriptorPrototype = NSSortDescriptor(key: SortingOptions.indexOf(index: item).rawValue, ascending: true)
@@ -64,7 +68,9 @@ class CommanderViewController: ViewController {
     
     override var representedObject: Any? {
         didSet {
-            
+            if let url = representedObject as? URL {
+                path = Path(url: url)
+            }
         }
     }
     
@@ -89,21 +95,6 @@ class CommanderViewController: ViewController {
             NSWorkspace.shared().openFile(selectedPath.path.rawValue)
             break
         }
-        
-        //        if (selectedPath?.isDirectory)! {
-        //            path = selectedPath
-        //        } else {
-        //            let src = Path("/Volumes/SanDisk/Archive.zip")
-        //            let dst = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
-        //
-        //            DispatchQueue.global().async {
-        //                src.copy(dst)
-        //            }
-        //
-        //            progressProvider = FileProgressProvider(src, dst: dst, delegate: self)
-        //        }
-        
-//        copyTask()
     }
 }
 

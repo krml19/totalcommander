@@ -10,15 +10,6 @@ import Cocoa
 
 class MainMenu: NSMenu {
     
-    required init(coder decoder: NSCoder) {
-        super.init(coder: decoder)
-        prepareMenu()
-    }
-    
-    override init(title: String) {
-        super.init(title: title)
-        prepareMenu()
-    }
     
     private func app() {
         let item = NSMenuItem(title: "menu_app".localized(), action: nil, keyEquivalent: "menu_app")
