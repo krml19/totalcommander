@@ -10,9 +10,5 @@ import Cocoa
 
 class RightViewController: CommanderViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
-    
+
 }

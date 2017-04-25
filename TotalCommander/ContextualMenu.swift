@@ -13,6 +13,8 @@ import RxSwift
 
 class ContextualMenu: NSMenu {
     
+    var subject: PublishSubject<Task.TaskType> = PublishSubject<Task.TaskType>()
+    
     @IBOutlet var copyItem: NSMenuItem! {
         didSet {
             copyItem.title = "menu_contextual_copy".localized()
@@ -31,14 +33,14 @@ class ContextualMenu: NSMenu {
     
     
     @IBAction func copyAction(_ sender: Any) {
-        
+        subject.onNext(.copy)
     }
     
     @IBAction func pasteAction(_ sender: Any) {
-        
+        subject.onNext(.paste)
     }
 
     @IBAction func deleteAction(_ sender: Any) {
-        
+        subject.onNext(.remove)
     }
 }

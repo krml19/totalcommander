@@ -10,9 +10,5 @@ import Cocoa
 
 class LeftViewController: CommanderViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
     
 }

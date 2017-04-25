@@ -58,7 +58,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/MainMenu.swift"
-                  timestampString = "514846653.572819"
+                  timestampString = "514853858.46738"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -73,7 +73,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/MainMenu.swift"
-                  timestampString = "514846653.577982"
+                  timestampString = "514853858.470694"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -137,28 +137,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TotalCommander/WindowController.swift"
-            timestampString = "514845298.62146"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "paste(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TotalCommander/CommanderViewController.swift"
-            timestampString = "514846258.76861"
+            timestampString = "514851762.838806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "CommanderViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -202,7 +186,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/WindowController.swift"
-                  timestampString = "514846738.772254"
+                  timestampString = "514853858.52858"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -217,12 +201,204 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/WindowController.swift"
-                  timestampString = "514846738.77464"
+                  timestampString = "514853858.537126"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
                   offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TotalCommander/WindowController.swift"
+            timestampString = "514847697.70558"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "paste(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.WindowController.paste (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/WindowController.swift"
+                  timestampString = "514853858.546843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.WindowController.paste (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/WindowController.swift"
+                  timestampString = "514853858.550047"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "723">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TotalCommander/CommanderViewController.swift"
+            timestampString = "514851762.838806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "CommanderViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.CommanderViewController.(path.didset : Swift.ImplicitlyUnwrappedOptional&lt;FileKit.Path&gt;).(closure #2)"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewController.swift"
+                  timestampString = "514853665.942665"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.CommanderViewController.(path.didset : Swift.ImplicitlyUnwrappedOptional&lt;FileKit.Path&gt;).(closure #2).(implicit closure #1)"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewController.swift"
+                  timestampString = "514853665.946321"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TotalCommander/CommanderViewContoller+Watch.swift"
+            timestampString = "514850224.744382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fsWatcherDidObserveRename(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.CommanderViewController.fsWatcherDidObserveRename (FileKit.DispatchFileSystemWatcher) -&gt; ()"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
+                  timestampString = "514853858.561869"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.CommanderViewController.(fsWatcherDidObserveRename (FileKit.DispatchFileSystemWatcher) -&gt; ()).(implicit closure #1)"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
+                  timestampString = "514853858.565688"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TotalCommander/CommanderViewContoller+Watch.swift"
+            timestampString = "514850225.711979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "fsWatcherDidObserveExtend(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.CommanderViewController.fsWatcherDidObserveExtend (FileKit.DispatchFileSystemWatcher) -&gt; ()"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
+                  timestampString = "514853858.593712"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TotalCommander.CommanderViewController.(fsWatcherDidObserveExtend (FileKit.DispatchFileSystemWatcher) -&gt; ()).(implicit closure #1)"
+                  moduleName = "TotalCommander"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
+                  timestampString = "514853858.597554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "25">
                </Location>
             </Locations>
          </BreakpointContent>

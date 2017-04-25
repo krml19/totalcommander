@@ -705,7 +705,7 @@
         <!--Commander-->
         <scene sceneID="6iA-Xf-Zua">
             <objects>
-                <controllerPlaceholder storyboardName="Commander" id="fW8-yO-pXO" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardIdentifier="left" storyboardName="Commander" id="fW8-yO-pXO" sceneMemberID="viewController"/>
                 <customObject id="Hbx-eh-jKH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="497" y="787"/>
@@ -713,7 +713,7 @@
         <!--Commander-->
         <scene sceneID="M3I-NT-yoM">
             <objects>
-                <controllerPlaceholder storyboardName="Commander" id="G1F-lx-RkN" sceneMemberID="viewController"/>
+                <controllerPlaceholder storyboardIdentifier="right" storyboardName="Commander" id="G1F-lx-RkN" sceneMemberID="viewController"/>
                 <customObject id="HlA-wK-WE4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="497" y="930"/>

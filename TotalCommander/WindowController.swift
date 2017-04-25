@@ -36,7 +36,9 @@ class WindowController: NSWindowController {
     }
     
     @IBAction func paste(_ sender: AnyObject?) {
-        
+        if let urls = NSPasteboard.general().readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
+            self.contentViewController?.representedObject = urls
+        }
     }
     
 }

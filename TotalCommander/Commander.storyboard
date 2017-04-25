@@ -212,6 +212,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contextualMenu" destination="N8n-xg-TEJ" id="0B5-Wb-VWr"/>
                         <outlet property="pathControl" destination="o4W-II-Ep9" id="mL1-t9-uno"/>
                         <outlet property="statusLabel" destination="rp6-ec-AE8" id="2AB-NB-GWA"/>
                         <outlet property="tableView" destination="faZ-fT-uXb" id="Qbu-DG-1cP"/>
@@ -247,6 +248,32 @@ CA
                 </menu>
             </objects>
             <point key="canvasLocation" x="248.5" y="146"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="4NQ-hw-OxN">
+            <objects>
+                <viewController storyboardIdentifier="right" id="gS6-Ga-62m" customClass="RightViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="h8G-AJ-8qh">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="60b-cs-C5T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224" y="568"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="H7u-DV-0qk">
+            <objects>
+                <viewController storyboardIdentifier="left" id="NH3-W6-GDh" customClass="LeftViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="GFV-jk-HrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="yQP-A6-m4W" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="567"/>
         </scene>
     </scenes>
     <resources>

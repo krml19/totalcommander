@@ -12,7 +12,8 @@ echo "From: " "${1}"
 echo "To: Pasteboard"
 echo "*********************************"
 
-pbcopy < "${1}"
+#pbcopy < "${1}"
+cp "${1}" "${2}"
 
 echo "*********************************"
 echo "Copy finished"
