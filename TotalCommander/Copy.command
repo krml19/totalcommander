@@ -7,13 +7,12 @@
 #  Copyright © 2017 Marcin Karmelita. All rights reserved.
 
 echo "*********************************"
-echo "Copy file to pastboard"
+echo "Copy file"
 echo "From: " "${1}"
-echo "To: Pasteboard"
+echo "To: " "${2}"
 echo "*********************************"
 
-#pbcopy < "${1}"
-cp "${1}" "${2}"
+cp -r "${1}" "${2}"
 
 echo "*********************************"
 echo "Copy finished"

@@ -18,7 +18,7 @@ extension Path {
             try moveFile(to: to)
         } catch {
             log.error(error)
-//            log.error("File cannot be moved.")
+            AlertController.errorOccurred(error)
         }
     }
     
@@ -27,7 +27,8 @@ extension Path {
             try copyFile(to: to)
             
         } catch {
-//            log.error("File cannot be moved.")
+            log.error(error)
+            AlertController.errorOccurred(error)
         }
     }
     
@@ -35,7 +36,9 @@ extension Path {
         do {
             try deleteFile()
         } catch {
-//            log.error("File cannot be deleted.")
+            
+            AlertController.errorOccurred(error)
+            log.error("File cannot be deleted.")
         }
     }    
 }

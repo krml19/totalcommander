@@ -23,6 +23,8 @@ class CommanderViewController: NSViewController {
                 switch taskType {
                 case .copy:
                     return self.copyTask()
+                case .move:
+                    return self.moveTask()
                 case .paste:
                     return self.pasteTask()
                 case .remove:
@@ -51,9 +53,13 @@ class CommanderViewController: NSViewController {
                 return FileItem(path)
             })
             
-            fileSystemWatcher = path.watch(0.5, queue: DispatchQueue.global(qos: .userInteractive)) { fileSystemEvent in
+            fileSystemWatcher = path.watch(0.5, queue: DispatchQueue.global(qos: .background)) { fileSystemEvent in
                 log.info(fileSystemEvent.path.fileSize ?? "--")
-                self.tableView.reloadData()
+                DispatchQueue.main.async(execute: { 
+                    self.items = self.path.sorted(by: self.tableView.sortDescriptors.first).map({ (path) -> FileItem in
+                        return FileItem(path)
+                    })
+                })
             }
         }
     }
@@ -285,6 +291,12 @@ extension CommanderViewController {
     }
     
     func deleteTask() {
+        let files: [Path] = tableView.selectedRowIndexes.map { (index) -> Path in
+            return self.items![index].path
+        }
+        files.forEach({
+            $0.delete()
+        })
         
     }
 }
