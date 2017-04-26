@@ -44,6 +44,7 @@ class CommanderViewController: NSViewController {
     @IBOutlet weak var pathControl: NSPathControl! {
         didSet {
             pathControl.isEditable = true
+            pathControl.doubleAction = #selector(pathControlDoubleClick(_:))
         }
     }
     
@@ -92,6 +93,7 @@ class CommanderViewController: NSViewController {
             return click.state == NSGestureRecognizerState.ended
         }).subscribe(onNext: { click in
             if let menu = self.tableView.menu as? ContextualMenu {
+                self.contextualMenu.prepare(self.tableView.selectedRowIndexes.count > 0)
                 (self.tableView.menu as? ContextualMenu)!.prepare(self.tableView.selectedRowIndexes.count > 0)
                 NSMenu.popUpContextMenu(menu, with: NSEvent(), for: self.tableView)
             }
@@ -130,6 +132,24 @@ class CommanderViewController: NSViewController {
         case .app, .file:
             NSWorkspace.shared().openFile(selectedPath.path.rawValue)
             break
+        }
+    }
+    
+    func pathControlDoubleClick(_ pathControl: NSPathControl) {
+        guard let window = NSApp.mainWindow else { return }
+        let openPanel = NSOpenPanel()
+        openPanel.showsHiddenFiles = true
+        openPanel.canChooseFiles = false
+        openPanel.canChooseDirectories = true
+        
+        openPanel.beginSheetModal(for: window) { response in
+            guard response == NSFileHandlingPanelOKButton else {
+                return
+            }
+            if let url = openPanel.url {
+               self.path = Path(url: url)
+            }
+            
         }
     }
 }

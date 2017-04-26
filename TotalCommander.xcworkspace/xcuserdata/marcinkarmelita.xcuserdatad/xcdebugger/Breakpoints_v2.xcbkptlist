@@ -58,7 +58,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/MainMenu.swift"
-                  timestampString = "514938800.084258"
+                  timestampString = "514941676.476574"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -73,7 +73,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/MainMenu.swift"
-                  timestampString = "514938800.087838"
+                  timestampString = "514941676.479528"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -154,7 +154,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
-                  timestampString = "514938800.114865"
+                  timestampString = "514941676.502946"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -169,7 +169,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
-                  timestampString = "514938800.117611"
+                  timestampString = "514941676.505143"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -202,7 +202,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
-                  timestampString = "514938800.122981"
+                  timestampString = "514941676.512971"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -217,7 +217,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewContoller+Watch.swift"
-                  timestampString = "514938800.125837"
+                  timestampString = "514941676.515125"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TotalCommander/CommanderViewController.swift"
-            timestampString = "514940638.209998"
+            timestampString = "514941380.073805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -250,12 +250,12 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewController.swift"
-                  timestampString = "514938800.131243"
+                  timestampString = "514941676.521196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "389">
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "877">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -265,12 +265,12 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/CommanderViewController.swift"
-                  timestampString = "514938800.133833"
+                  timestampString = "514941676.524375"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "1353">
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "1843">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -294,31 +294,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TotalCommander/CommanderViewController.swift"
-            timestampString = "514937912.534345"
+            timestampString = "514941139.841217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "CommanderViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TotalCommander/CommanderViewController.swift"
-            timestampString = "514940638.209998"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "CommanderViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -330,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TotalCommander/CommanderViewController.swift"
-            timestampString = "514940638.209998"
+            timestampString = "514941139.841217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "CommanderViewController"
             landmarkType = "3">
             <Locations>
@@ -442,7 +426,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/MainMenu.swift"
-                  timestampString = "514938800.1681"
+                  timestampString = "514941676.566212"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "95"
@@ -457,7 +441,7 @@
                   moduleName = "TotalCommander"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcinkarmelita/Bitbucket/TotalCommander/TotalCommander/MainMenu.swift"
-                  timestampString = "514938800.171168"
+                  timestampString = "514941676.569547"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"

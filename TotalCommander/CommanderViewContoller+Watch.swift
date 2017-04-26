@@ -29,5 +29,9 @@ extension CommanderViewController {
         self.nameColumn.title = "menu_column_name".localized()
         self.modificationDateColumn.title = "menu_column_date".localized()
         self.sizeColumn.title = "menu_column_size".localized()
+        self.contextualMenu.copyItem.title = "menu_contextual_copy".localized()
+        self.contextualMenu.moveItem.title = "menu_contextual_move".localized()
+        self.contextualMenu.deleteItem.title = "menu_contextual_delete".localized()
+        self.contextualMenu.pasteItem.title = "menu_contextual_paste".localized()
     }
 }
