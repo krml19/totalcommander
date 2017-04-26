@@ -25,7 +25,7 @@ open class Task: NSObject {
     private var process: Process!
     private var qos = DispatchQoS.QoSClass.background
     
-    var terminationHandler: TerminationHandler
+    dynamic var terminationHandler: TerminationHandler
     
     dynamic var isRunning: Bool {
         return process.isRunning
@@ -52,7 +52,7 @@ open class Task: NSObject {
         }
     }
     
-    func done() {
+    dynamic func done() {
         
     }
     
@@ -73,9 +73,9 @@ open class Task: NSObject {
                 log.info(handler.terminationStatus)
                 
                 DispatchQueue.main.async(execute: {
-                    self.done()
                     if self.terminationHandler != nil {
                         self.terminationHandler!(handler)
+                        
                     }
                 })
             }

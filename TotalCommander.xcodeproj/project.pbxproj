@@ -24,6 +24,7 @@
 		F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD311EAEA7CC003D405F /* FileItem.swift */; };
 		F221AD351EAEAC5D003D405F /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD341EAEAC5D003D405F /* TableCellView.swift */; };
 		F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */; };
+		F234B18F1EB1038A007D7B75 /* DeleteTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234B18E1EB1038A007D7B75 /* DeleteTask.swift */; };
 		F23AAAAA1EA7D53200E995B2 /* CommanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */; };
 		F23AAAAD1EA7D54D00E995B2 /* Commander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */; };
 		F23AAAAF1EA7EEB700E995B2 /* FileKit+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AAAAE1EA7EEB700E995B2 /* FileKit+Sort.swift */; };
@@ -95,6 +96,7 @@
 		F221AD341EAEAC5D003D405F /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Tasks.swift"; sourceTree = "<group>"; };
 		F2347FE01EAB570B00D4311B /* TotalCommander.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TotalCommander.playground; sourceTree = "<group>"; };
+		F234B18E1EB1038A007D7B75 /* DeleteTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTask.swift; sourceTree = "<group>"; };
 		F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanderViewController.swift; sourceTree = "<group>"; };
 		F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Commander.storyboard; sourceTree = "<group>"; };
 		F23AAAAE1EA7EEB700E995B2 /* FileKit+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Sort.swift"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				F25D25A41EA5443600074EE6 /* Task.swift */,
 				F221AD291EAE68C4003D405F /* CopyTask.swift */,
+				F234B18E1EB1038A007D7B75 /* DeleteTask.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */,
 				F25D25A51EA5443600074EE6 /* Task.swift in Sources */,
 				F221AD2E1EAE9D49003D405F /* SizeCell.swift in Sources */,
+				F234B18F1EB1038A007D7B75 /* DeleteTask.swift in Sources */,
 				F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */,
 				F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */,
 				F2CD02001EAFE7E6006B5EEE /* WindowController.swift in Sources */,

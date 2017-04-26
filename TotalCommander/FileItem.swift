@@ -21,7 +21,14 @@ class FileItem: NSObject {
     }
     
     var size: String {
-        return path.isDirectory ? "--" : String(describing: path.fileSize!) + "loc_bytes".localized()
+        if path.isDirectory {
+            return "--"
+        }
+        if let size = path.fileSize {
+            return String(size) +  " loc_bytes".localized()
+        }
+        return "--"
+        
     }
     var filename: String {
         return path.fileName

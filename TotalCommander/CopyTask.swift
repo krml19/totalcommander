@@ -56,4 +56,5 @@ class CopyTask: Task {
         super.done()
         fileProgressProvider?.stop()
     }
+    
 }

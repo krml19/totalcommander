@@ -25,6 +25,8 @@ class CommanderViewController: NSViewController {
                     return self.copyTask()
                 case .paste:
                     return self.pasteTask()
+                case .remove:
+                    return self.deleteTask()
                 default:
                     return
                 }
@@ -51,6 +53,7 @@ class CommanderViewController: NSViewController {
             
             fileSystemWatcher = path.watch(0.5, queue: DispatchQueue.global(qos: .userInteractive)) { fileSystemEvent in
                 log.info(fileSystemEvent.path.fileSize ?? "--")
+                self.tableView.reloadData()
             }
         }
     }
@@ -71,7 +74,9 @@ class CommanderViewController: NSViewController {
         let nib = NSNib(nibNamed: "SizeCell", bundle: nil)
         tableView.register(nib, forIdentifier: "SizeCellID")
         tableView.doubleAction = #selector(tableViewDoubleClick(_:))
-        tableView.rx.rightClickGesture().subscribe(onNext: { click in
+        tableView.rx.rightClickGesture().filter({ (click) -> Bool in
+            return click.state == NSGestureRecognizerState.ended
+        }).subscribe(onNext: { click in
             if let menu = self.tableView.menu {
                 NSMenu.popUpContextMenu(menu, with: NSEvent(), for: self.tableView)
             }
@@ -238,7 +243,7 @@ extension CommanderViewController: NSTableViewDataSource {
 
 // operations on files
 extension CommanderViewController {
-    func copyTask() {
+    func pasteTask() {
         guard let urls = (NSPasteboard.general().readObjects(forClasses: [NSURL.self], options: nil)) as? [URL] else {
             log.error("Cannot read from pasteboard")
             return
@@ -248,39 +253,8 @@ extension CommanderViewController {
             CopyTask(Path(url: url)!, to: self.path + url.lastPathComponent , terminationHandler: { process in
                 log.debug(process.terminationReason)
                 log.debug(process.terminationStatus)
-            }).addProgress(onStart: { _ -> Void? in
-                guard let item: FileItem = self.items?.first(where: { element -> Bool in
-                    return element.url == self.path.url
-                }) else {
-                    log.debug("Start")
-                    return ()
-                }
-                
-                item.hideProgress.onNext(false)
-                return ()
-            }, onProgress: { (progress) -> Void? in
-                guard let item: FileItem = self.items?.first(where: { element -> Bool in
-                    return element.url == self.path.url
-                }) else {
-                    log.debug("Progress: \(progress)")
-                    return ()
-                }
-                
-                item.progressValue.onNext(progress)
-                return ()
-            }, onEnd: { _ -> Void? in
-                guard let item: FileItem = self.items?.first(where: { element -> Bool in
-                    return element.url == self.path.url
-                }) else {
-                    log.debug("Done")
-                    return ()
-                }
-                
-                item.hideProgress.onNext(true)
-                return ()
             }).launch()
         }
-        
     }
     
     func moveTask() {
@@ -300,7 +274,7 @@ extension CommanderViewController {
         task.run()
     }
     
-    func pasteTask() {
+    func copyTask() {
         let pasteboard = NSPasteboard.general()
         pasteboard.clearContents()
         let files: [URL] = tableView.selectedRowIndexes.map { (index) -> URL in
@@ -308,6 +282,9 @@ extension CommanderViewController {
         }
         
         pasteboard.writeObjects(files as [NSPasteboardWriting])
+    }
+    
+    func deleteTask() {
         
     }
 }
