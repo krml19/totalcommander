@@ -41,4 +41,11 @@ class WindowController: NSWindowController {
         }
     }
     
+    @IBAction func polish(_ sender: AnyObject?) {
+        Localizable.set(language: .pl)
+    }
+    
+    @IBAction func english(_ sender: AnyObject?) {
+        Localizable.set(language: .en)
+    }
 }

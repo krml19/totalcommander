@@ -106,6 +106,7 @@
 		F25D25A01EA5375E00074EE6 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		F25D25A41EA5443600074EE6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F25D25A71EA55DF400074EE6 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		F27BB1131EB151FF0062E70E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F280C1DE1EAB5E1D004E0BEB /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		F280C1E01EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommanderViewContoller+Watch.swift"; sourceTree = "<group>"; };
 		F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProgressProvider.swift; sourceTree = "<group>"; };
@@ -677,6 +678,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F2CCDAF81E9C1D2000030116 /* Base */,
+				F27BB1131EB151FF0062E70E /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

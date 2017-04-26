@@ -25,7 +25,7 @@ class FileItem: NSObject {
             return "--"
         }
         if let size = path.fileSize {
-            return String(size) +  " loc_bytes".localized()
+            return String(size) +  "loc_bytes".localized()
         }
         return "--"
         

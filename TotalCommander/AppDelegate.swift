@@ -17,8 +17,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     fileprivate var localizable: Localizable!
     
+    // language menu
+    @IBOutlet weak var polish: NSMenuItem!
+    @IBOutlet weak var english: NSMenuItem!
+    @IBOutlet weak var language_menu: NSMenu!
+    
+    // total commander menu
+    @IBOutlet weak var about: NSMenuItem!
+    @IBOutlet weak var hide: NSMenuItem!
+    @IBOutlet weak var hide_others: NSMenuItem!
+    @IBOutlet weak var show: NSMenuItem!
+    @IBOutlet weak var quit: NSMenuItem!
+    
+    // view
+    @IBOutlet weak var view_menu: NSMenu!
+    @IBOutlet weak var fullscreen: NSMenuItem!
+    
+    // window
+    @IBOutlet weak var minimize: NSMenuItem!
+    @IBOutlet weak var window_menu: NSMenu!
+    
+    @IBOutlet weak var file: NSMenuItem!
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(langugeDidChange),
+                                               name: NSNotification.Name(LCLLanguageChangeNotification),
+                                               object: nil)
         // Insert code here to initialize your application
         setup()
     }
@@ -44,7 +67,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 extension AppDelegate: LocalizedDelegate {
-    func langugeDidChange() {
+    @objc func langugeDidChange() {
+        
+        // language
+        language_menu.title = "menu_language".localized()
+        polish.title = "menu_language_polish".localized()
+        english.title = "menu_language_english".localized()
+        
+        // about
+        about.title = "menu_tc_about".localized()
+        hide.title = "menu_tc_hide".localized()
+        hide_others.title = "menu_tc_hide_others".localized()
+        show.title = "menu_tc_show".localized()
+        quit.title = "menu_tc_quit".localized()
+        
+        // view
+        view_menu.title = "menu_view_menu".localized()
+        fullscreen.title = "menu_view_fullscreen".localized()
+        
+        //window
+        window_menu.title = "menu_window_menu".localized()
+        minimize.title = "menu_window_minimize".localized()
+        
         MainMenu.updateLanguage(menu: NSApp.mainMenu!)
     }
 }

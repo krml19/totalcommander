@@ -21,4 +21,10 @@ extension CommanderViewController: DispatchFileSystemWatcherDelegate {
         log.debug(watch.path.fileSize?.description ?? "No content.")
     }
 }
-    
+
+// localize
+extension CommanderViewController {
+    @objc func langugeDidChange() {
+        self.viewDidLoad()
+    }
+}

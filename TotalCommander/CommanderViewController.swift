@@ -11,6 +11,7 @@ import FileKit
 import RxSwift
 import RxCocoa
 import RxGesture
+import Localize_Swift
 
 class CommanderViewController: NSViewController {
     
@@ -72,6 +73,10 @@ class CommanderViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        NotificationCenter.default.addObserver(self, selector: #selector(langugeDidChange),
+                                               name: NSNotification.Name(LCLLanguageChangeNotification),
+                                               object: nil)
+        
         
         tableView.register(forDraggedTypes: [NSURLPboardType])
         tableView.target = self

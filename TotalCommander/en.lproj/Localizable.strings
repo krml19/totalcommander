@@ -17,17 +17,6 @@
 "menu_language_polish" = "Polish";
 "menu_language_english" = "English";
 
-"menu_tc_about" = "About TotalCommander";
-"menu_tc_hide" = "Hide";
-"menu_tc_hide_others" = "Hide others";
-"menu_tc_show" = "Show";
-"menu_tc_quit" = "Quit";
-"menu_view_menu" = "View";
-"menu_view_fullscreen" = "Fullscreen";
-"menu_window_menu" = "Window";
-"menu_window_minimize" = "Minimize";
-
-
 "menu_app_tooltip" = "Total Commander";
 "menu_file_tooltip" = "File";
 "menu_edit_tooltip" = "Edit";
