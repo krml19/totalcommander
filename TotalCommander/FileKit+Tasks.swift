@@ -36,7 +36,6 @@ extension Path {
         do {
             try deleteFile()
         } catch {
-            
             AlertController.errorOccurred(error)
             log.error("File cannot be deleted.")
         }

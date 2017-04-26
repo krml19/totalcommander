@@ -13,6 +13,14 @@ import RxSwift
 
 class ContextualMenu: NSMenu {
     
+    func prepare(_ isSthSelected: Bool) {
+        copyItem.isEnabled = isSthSelected
+        deleteItem.isEnabled = isSthSelected
+        let pasteboardIsNotempty = NSPasteboard.general().pasteboardItems != nil
+        moveItem.isEnabled = pasteboardIsNotempty
+        pasteItem.isEnabled = pasteboardIsNotempty
+    }
+    
     var subject: PublishSubject<Task.TaskType> = PublishSubject<Task.TaskType>()
     
     @IBOutlet var copyItem: NSMenuItem! {
@@ -30,7 +38,11 @@ class ContextualMenu: NSMenu {
             deleteItem.title = "menu_contextual_delete".localized()
         }
     }
-    
+    @IBOutlet var moveItem: NSMenuItem! {
+        didSet {
+            moveItem.title = "menu_contextual_move".localized()
+        }
+    }
     
     @IBAction func copyAction(_ sender: Any) {
         subject.onNext(.copy)
@@ -42,5 +54,8 @@ class ContextualMenu: NSMenu {
 
     @IBAction func deleteAction(_ sender: Any) {
         subject.onNext(.remove)
+    }
+    @IBAction func moveAction(_ sender: Any) {
+        subject.onNext(.move)
     }
 }

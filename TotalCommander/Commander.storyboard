@@ -226,6 +226,11 @@
                                 <action selector="copyAction:" target="N8n-xg-TEJ" id="buk-ja-U7I"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Move" keyEquivalent="x" id="srn-9Y-JOL">
+                            <connections>
+                                <action selector="moveAction:" target="N8n-xg-TEJ" id="eR0-Fv-eGU"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="Paste" keyEquivalent="v" id="QoY-h7-f7z">
                             <connections>
                                 <action selector="pasteAction:" target="N8n-xg-TEJ" id="hby-8O-7xx"/>
@@ -243,6 +248,7 @@ CA
                     <connections>
                         <outlet property="copyItem" destination="yfb-sS-bJ6" id="tzY-JQ-knp"/>
                         <outlet property="deleteItem" destination="P1D-G7-m77" id="g2p-50-Oje"/>
+                        <outlet property="moveItem" destination="srn-9Y-JOL" id="wk1-lp-ceX"/>
                         <outlet property="pasteItem" destination="QoY-h7-f7z" id="SXP-AP-A6L"/>
                     </connections>
                 </menu>

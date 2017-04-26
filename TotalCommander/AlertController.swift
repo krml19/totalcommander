@@ -27,7 +27,11 @@ class AlertController {
     }
     
     class func overrideFile() -> Bool {
-        return dialogOKCancel(question: "alert_message_exists".localized(), text: "alert_text_exists")
+        return dialogOKCancel(question: "alert_message_exists".localized(), text: "alert_text_exists".localized())
+    }
+    
+    class func deleteFile() -> Bool {
+        return dialogOKCancel(question: "alert_message_delete".localized(), text: "alert_text_delete".localized())
     }
     
     @discardableResult

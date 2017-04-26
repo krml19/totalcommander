@@ -83,7 +83,8 @@ class CommanderViewController: NSViewController {
         tableView.rx.rightClickGesture().filter({ (click) -> Bool in
             return click.state == NSGestureRecognizerState.ended
         }).subscribe(onNext: { click in
-            if let menu = self.tableView.menu {
+            if let menu = self.tableView.menu as? ContextualMenu {
+                (self.tableView.menu as? ContextualMenu)!.prepare(self.tableView.selectedRowIndexes.count > 0)
                 NSMenu.popUpContextMenu(menu, with: NSEvent(), for: self.tableView)
             }
         }).addDisposableTo(DisposeBag())
@@ -294,6 +295,14 @@ extension CommanderViewController {
         let files: [Path] = tableView.selectedRowIndexes.map { (index) -> Path in
             return self.items![index].path
         }
+        guard files.count != 0 else {
+            return
+        }
+        
+        guard AlertController.deleteFile() else {
+            return
+        }
+        
         files.forEach({
             $0.delete()
         })

@@ -69,12 +69,12 @@ open class Task: NSObject {
             self.process.launchPath = path
             self.process.arguments = self.arguments
 
-            self.process.terminationHandler = { [unowned self] handler in
+            self.process.terminationHandler = { [weak self] handler in
                 log.info(handler.terminationStatus)
                 
                 DispatchQueue.main.async(execute: {
-                    if self.terminationHandler != nil {
-                        self.terminationHandler!(handler)
+                    if self?.terminationHandler != nil {
+                        self?.terminationHandler!(handler)
                         
                     }
                 })
