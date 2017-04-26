@@ -34,6 +34,10 @@
 
 // commander
 "loc_bytes" = " bajtów";
+"menu_column_name" = "Nazwa";
+"menu_column_date" = "Data modyfikacji";
+"menu_column_size" = "Rozmiar";
+
 
 //contextual menu
 "menu_contextual_copy" = "Kopiuj";
@@ -47,4 +51,5 @@
 "alert_message_delete" = "Uwaga.";
 "alert_text_delete" = "Operacja usunięcia jest nieodwracalna.";
 "alert_error_occured" = "Błąd";
+
 

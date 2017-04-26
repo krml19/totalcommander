@@ -29,40 +29,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var show: NSMenuItem!
     @IBOutlet weak var quit: NSMenuItem!
     
-    // view
-    @IBOutlet weak var view_menu: NSMenu!
-    @IBOutlet weak var fullscreen: NSMenuItem!
     
     // window
     @IBOutlet weak var minimize: NSMenuItem!
     @IBOutlet weak var window_menu: NSMenu!
     
-    @IBOutlet weak var file: NSMenuItem!
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        NotificationCenter.default.addObserver(self, selector: #selector(langugeDidChange),
-                                               name: NSNotification.Name(LCLLanguageChangeNotification),
-                                               object: nil)
-        // Insert code here to initialize your application
+        
         setup()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        
     }
     
     @IBAction func chanlang(_ sender: Any) {
         Localizable.toggleLanguage()
     }
     func setup() {
-        // language
-        localizable = Localizable(self)
-        
-        // menu
-//        let menu = MainMenu(title: "File")
-//        NSApp.mainMenu = menu
-        
         //swifty beaver
         log.addDestination(ConsoleDestination())
+        Localizable.set(language: .en)
+        NotificationCenter.default.addObserver(self, selector: #selector(langugeDidChange),
+                                               name: NSNotification.Name(LCLLanguageChangeNotification),
+                                               object: nil)
     }
 }
 
@@ -80,10 +70,6 @@ extension AppDelegate: LocalizedDelegate {
         hide_others.title = "menu_tc_hide_others".localized()
         show.title = "menu_tc_show".localized()
         quit.title = "menu_tc_quit".localized()
-        
-        // view
-        view_menu.title = "menu_view_menu".localized()
-        fullscreen.title = "menu_view_fullscreen".localized()
         
         //window
         window_menu.title = "menu_window_menu".localized()

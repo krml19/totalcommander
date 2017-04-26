@@ -213,7 +213,10 @@
                     </view>
                     <connections>
                         <outlet property="contextualMenu" destination="N8n-xg-TEJ" id="0B5-Wb-VWr"/>
+                        <outlet property="modificationDateColumn" destination="MvU-R3-vlP" id="Jcr-yi-j2F"/>
+                        <outlet property="nameColumn" destination="Sm9-hZ-Dlm" id="AVP-fa-D56"/>
                         <outlet property="pathControl" destination="o4W-II-Ep9" id="mL1-t9-uno"/>
+                        <outlet property="sizeColumn" destination="bQK-CU-0JA" id="g8V-Uo-4v3"/>
                         <outlet property="statusLabel" destination="rp6-ec-AE8" id="2AB-NB-GWA"/>
                         <outlet property="tableView" destination="faZ-fT-uXb" id="Qbu-DG-1cP"/>
                     </connections>

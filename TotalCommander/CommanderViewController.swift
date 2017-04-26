@@ -36,6 +36,9 @@ class CommanderViewController: NSViewController {
             }).addDisposableTo(disposeBag)
         }
     }
+    @IBOutlet var nameColumn: NSTableColumn!
+    @IBOutlet var modificationDateColumn: NSTableColumn!
+    @IBOutlet var sizeColumn: NSTableColumn!
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var pathControl: NSPathControl! {

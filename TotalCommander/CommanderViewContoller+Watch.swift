@@ -25,6 +25,9 @@ extension CommanderViewController: DispatchFileSystemWatcherDelegate {
 // localize
 extension CommanderViewController {
     @objc func langugeDidChange() {
-        self.viewDidLoad()
+        self.tableView.reloadData()
+        self.nameColumn.title = "menu_column_name".localized()
+        self.modificationDateColumn.title = "menu_column_date".localized()
+        self.sizeColumn.title = "menu_column_size".localized()
     }
 }
