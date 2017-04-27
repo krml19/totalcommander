@@ -31,6 +31,7 @@ class Localizable {
     required init(_ object: LocalizedDelegate) {
         delegate = object
         setupNotification()
+        
     }
     
     

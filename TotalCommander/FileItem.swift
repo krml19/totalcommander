@@ -10,6 +10,7 @@ import Cocoa
 import RxSwift
 import RxCocoa
 import FileKit
+import DateToolsSwift
 
 class FileItem: NSObject {
     public private(set) var path: Path
@@ -39,10 +40,7 @@ class FileItem: NSObject {
     }
     
     var modificationDate: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .long
-        return dateFormatter.string(from: path.modificationDate ?? path.creationDate ?? Date())
+        return DateFormatter.localizedString(from: path.modificationDate ?? path.creationDate ?? Date(), dateStyle: .medium, timeStyle: .medium)
     }
     
     var image: NSImage? {

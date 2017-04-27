@@ -163,7 +163,7 @@
                                             </scrollView>
                                             <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-II-Ep9">
                                                 <rect key="frame" x="1" y="215" width="273" height="20"/>
-                                                <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" id="jbr-Yj-mxI">
+                                                <pathCell key="cell" controlSize="small" lineBreakMode="truncatingHead" selectable="YES" editable="YES" alignment="left" id="jbr-Yj-mxI">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <url key="url" string="file:///Users/marcinkarmelita/Desktop/mag_nor/"/>
                                                     <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
@@ -172,7 +172,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="BfM-mj-DZp" firstAttribute="leading" secondItem="VAu-MH-ZSn" secondAttribute="leading" id="Ewg-B9-L30"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o4W-II-Ep9" secondAttribute="trailing" id="GxF-1f-FI6"/>
                                             <constraint firstItem="BfM-mj-DZp" firstAttribute="top" secondItem="o4W-II-Ep9" secondAttribute="bottom" constant="5" id="PNF-9B-IwZ"/>
                                             <constraint firstItem="o4W-II-Ep9" firstAttribute="leading" secondItem="faZ-fT-uXb" secondAttribute="leading" id="WVJ-Ow-GAY"/>
                                             <constraint firstItem="o4W-II-Ep9" firstAttribute="top" secondItem="VAu-MH-ZSn" secondAttribute="top" constant="5" id="fDN-01-SPe"/>

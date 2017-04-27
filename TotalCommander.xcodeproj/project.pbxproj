@@ -32,6 +32,7 @@
 		F25D25A11EA5375E00074EE6 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A01EA5375E00074EE6 /* Language.swift */; };
 		F25D25A51EA5443600074EE6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A41EA5443600074EE6 /* Task.swift */; };
 		F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A71EA55DF400074EE6 /* Defaults.swift */; };
+		F27BB1151EB16B330062E70E /* ProgressProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27BB1141EB16B330062E70E /* ProgressProvider.swift */; };
 		F280C1DF1EAB5E1D004E0BEB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280C1DE1EAB5E1D004E0BEB /* AlertController.swift */; };
 		F280C1E11EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280C1E01EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift */; };
 		F280C1E61EABECB0004E0BEB /* FileProgressProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */; };
@@ -105,6 +106,7 @@
 		F25D25A41EA5443600074EE6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F25D25A71EA55DF400074EE6 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F27BB1131EB151FF0062E70E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F27BB1141EB16B330062E70E /* ProgressProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressProvider.swift; sourceTree = "<group>"; };
 		F280C1DE1EAB5E1D004E0BEB /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		F280C1E01EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommanderViewContoller+Watch.swift"; sourceTree = "<group>"; };
 		F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProgressProvider.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */,
+				F27BB1141EB16B330062E70E /* ProgressProvider.swift */,
 			);
 			name = Progress;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				F25D25A11EA5375E00074EE6 /* Language.swift in Sources */,
 				F2CD02021EAFEF70006B5EEE /* LeftViewController.swift in Sources */,
 				F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */,
+				F27BB1151EB16B330062E70E /* ProgressProvider.swift in Sources */,
 				F25D25A51EA5443600074EE6 /* Task.swift in Sources */,
 				F221AD2E1EAE9D49003D405F /* SizeCell.swift in Sources */,
 				F234B18F1EB1038A007D7B75 /* DeleteTask.swift in Sources */,

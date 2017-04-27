@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DateToolsSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FileKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>004411B08F73D75988070AE52BA80177</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>35FAB3297936B13596BDBCCF317BF519</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48130AB4713FF9C8DEE5C924E6DDC093</key>
+		<key>43344CE602949982D74911277574B5E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B19BBE283E5880A516CE79EB9D10E19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7519C337981425B41E9ACF246FDEFFFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,27 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A1A5B34F0D1442D5635FA652421208B</key>
+		<key>9AD57B4FDEFD807CEEFF95A9DD0E10FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC4123B2D7B7D423151BE68B4CF39B70</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B9F43317C31FFEE03A9F45ABED004916</key>
+		<key>A3DC00CB7D39183C27254E1E63EAF43B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C7860766171628943370CF3B99189051</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D6F960F7306CA5AD759C5F1E9CF07514</key>
 		<dict>
 			<key>primary</key>
 			<true/>
