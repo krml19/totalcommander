@@ -38,6 +38,10 @@
 "menu_column_date" = "Data modyfikacji";
 "menu_column_size" = "Rozmiar";
 
+"menu_column_name_tooltip" = "Sortuj po nazwie";
+"menu_column_date_tooltip" = "Sortuj po dacie";
+"menu_column_size_tooltip" = "Sort po rozmiarze";
+
 
 //contextual menu
 "menu_contextual_copy" = "Kopiuj";
@@ -51,5 +55,11 @@
 "alert_message_delete" = "Uwaga.";
 "alert_text_delete" = "Operacja usunięcia jest nieodwracalna.";
 "alert_error_occured" = "Błąd";
+
+// operation controller
+"menu_operation" = "Operacja na plikach";
+"dismiss" = "Przerwij";
+"operation" = "Liczba plików: ";
+
 
 

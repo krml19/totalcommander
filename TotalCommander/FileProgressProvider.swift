@@ -9,7 +9,6 @@
 import Cocoa
 import FileKit
 
-typealias EndHandler = ((Void) -> Void?)
 typealias ProgressHandler = ((Double) -> Void?)
 
 open class FileProgressProvider {
@@ -27,6 +26,7 @@ open class FileProgressProvider {
     }
     
     public func stop() {
+        progressHandler?(1.0)
         timer.invalidate()
     }
     
@@ -34,8 +34,6 @@ open class FileProgressProvider {
         self.timeInterval = timeInterval
         self.tasks = tasks
         self.progressHandler = onProgress
-        
-    
     }
     
     @objc fileprivate func tick() {
@@ -43,12 +41,17 @@ open class FileProgressProvider {
     }
     
     private var calculateOverallProgress: Double {
+        guard tasks.filter({
+            !$0.isFinished
+        }).first != nil else {
+            return 1.0
+        }
+
         var overallProgress: Double = 0.0
         tasks.forEach({
             overallProgress += $0.progress
         })
         guard tasks.count > 0 else {
-            stop()
             return 1.0
         }
         

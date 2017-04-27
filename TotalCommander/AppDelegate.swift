@@ -29,11 +29,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var show: NSMenuItem!
     @IBOutlet weak var quit: NSMenuItem!
     
-    
-    // window
-    @IBOutlet weak var minimize: NSMenuItem!
-    @IBOutlet weak var window_menu: NSMenu!
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         setup()
@@ -49,10 +44,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setup() {
         //swifty beaver
         log.addDestination(ConsoleDestination())
-        Localizable.set(language: .en)
         NotificationCenter.default.addObserver(self, selector: #selector(langugeDidChange),
                                                name: NSNotification.Name(LCLLanguageChangeNotification),
                                                object: nil)
+        Localizable.set(language: .en)
+        
+        NSApp.mainWindow?.title = "Total Commander"
     }
 }
 
@@ -64,6 +61,10 @@ extension AppDelegate: LocalizedDelegate {
         polish.title = "menu_language_polish".localized()
         english.title = "menu_language_english".localized()
         
+        let isPolish = Localizable.currentLanguage() == Language.pl
+        polish.state = isPolish ? 1 : 0
+        english.state = isPolish ? 0 : 1
+        
         // about
         about.title = "menu_tc_about".localized()
         hide.title = "menu_tc_hide".localized()
@@ -71,9 +72,6 @@ extension AppDelegate: LocalizedDelegate {
         show.title = "menu_tc_show".localized()
         quit.title = "menu_tc_quit".localized()
         
-        //window
-        window_menu.title = "menu_window_menu".localized()
-        minimize.title = "menu_window_minimize".localized()
         
     }
 }

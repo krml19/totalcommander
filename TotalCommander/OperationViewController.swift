@@ -38,7 +38,7 @@ class OperationViewController: NSViewController {
         title = "menu_operation".localized()
         progressIndicator.doubleValue = 0.0
         dismissButton.title = "dismiss".localized()
-        progressTextField.stringValue = "operation".localized()
+        progressTextField.stringValue = "operation".localized() + String(tasks.count)
     }
     
     private func configureData() {
@@ -51,8 +51,11 @@ class OperationViewController: NSViewController {
             $0.launch()
         })
         
-        fileProgress = FileProgressProvider(tasks: tasks, onProgress: { doubleValue -> Void? in
-            self.progressIndicator.doubleValue = doubleValue
+        fileProgress = FileProgressProvider(tasks: tasks, onProgress: { [weak self] doubleValue -> Void? in
+            self?.progressIndicator.doubleValue = doubleValue
+            if Double.minimum(doubleValue, 1.0) == 1.0 {
+                self?.view.window?.close()
+            }
             return ()
         })
         

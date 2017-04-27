@@ -12,8 +12,8 @@ class WindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        self.window?.title = "Total Commander"
+        
     }
     
     @IBAction func polish(_ sender: AnyObject?) {

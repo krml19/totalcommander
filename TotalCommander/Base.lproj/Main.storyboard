@@ -49,18 +49,6 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Window" id="aUF-d1-5bR">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
-                                    <items>
-                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
-                                            <connections>
-                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
                             <menuItem title="Language" id="WaQ-Gn-7W6">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Language" id="b4T-oP-Mn1">
@@ -95,11 +83,9 @@
                         <outlet property="hide" destination="Olw-nP-bQN" id="yXc-3e-UQC"/>
                         <outlet property="hide_others" destination="Vdr-fp-XzO" id="jRi-1y-HPp"/>
                         <outlet property="language_menu" destination="b4T-oP-Mn1" id="6IT-Oj-A3n"/>
-                        <outlet property="minimize" destination="OY7-WF-poV" id="9FZ-sq-qQU"/>
                         <outlet property="polish" destination="Mpp-1W-VBk" id="qki-x0-tAa"/>
                         <outlet property="quit" destination="4sb-4s-VLi" id="Wh2-08-1HS"/>
                         <outlet property="show" destination="Kd2-mp-pUS" id="PEX-Fh-32l"/>
-                        <outlet property="window_menu" destination="Td7-aD-5lo" id="LIb-eu-gQD"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -124,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="74" y="373"/>
         </scene>
-        <!--View Controller-->
+        <!--Total Commander-->
         <scene sceneID="O7u-rs-sZO">
             <objects>
-                <splitViewController id="vbg-8u-f81" customClass="ViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController title="Total Commander" id="vbg-8u-f81" customClass="ViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="Svu-XK-W6c"/>
                         <splitViewItem id="zHv-CD-6BB"/>

@@ -39,6 +39,10 @@
 "menu_column_date" = "Modification date";
 "menu_column_size" = "Size";
 
+"menu_column_name_tooltip" = "Sort by name";
+"menu_column_date_tooltip" = "Sort by date";
+"menu_column_size_tooltip" = "Sort by size";
+
 
 //contextual menu
 "menu_contextual_copy" = "Copy";
@@ -53,6 +57,8 @@
 "alert_text_delete" = "Deleting cannot be reversed.";
 "alert_error_occured" = "Error";
 
-
-
+// operation controller
+"menu_operation" = "Operation on files";
+"dismiss" = "Suspend";
+"operation" = "Number of files: ";
 

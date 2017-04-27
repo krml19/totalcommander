@@ -40,7 +40,7 @@ class CommanderViewController: NSViewController {
     @IBOutlet var modificationDateColumn: NSTableColumn!
     @IBOutlet var sizeColumn: NSTableColumn!
     @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var statusLabel: NSTextField!
+
     @IBOutlet weak var pathControl: NSPathControl! {
         didSet {
             pathControl.isEditable = true
@@ -204,11 +204,7 @@ extension CommanderViewController: NSTableViewDelegate {
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        func updateStatus() {
-            statusLabel.stringValue = String(tableView.numberOfSelectedRows)
-        }
-        
-        updateStatus()
+    
     }
     
 }
@@ -227,54 +223,64 @@ extension CommanderViewController: NSTableViewDataSource {
 }
 
 // drag
-//extension CommanderViewController {
-//    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
-//        log.debug(row)
-//        if let size = items?.count, size >= row {
-//            return true
-//        }
-//        
-//        return items?[row].isDirectory == true
-//    }
-//    
-//    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
-//        log.info(dropOperation)
-//        
-//        if let size = items?.count, size >= row {
-//            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
-//            return .move
-//        }
-//        
-//        if let item = items?[row], item.isDirectory {
-//            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
-//        } else {
-//            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.none
-//        }
-//        
-//        return NSDragOperation.move
-//    }
-//    
-//    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
-//        log.debug("Ended at")
-//        
-//    }
-//    
-//    func tableView(_ tableView: NSTableView, updateDraggingItemsForDrag draggingInfo: NSDraggingInfo) {
-//        let pasteboard = draggingInfo.draggingPasteboard()
-//        if let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
-//            log.info(urls)
-//        }
-//    }
-//    
-//    func tableView(_ tableView: NSTableView, didDrag tableColumn: NSTableColumn) {
-//        log.debug("Did drag")
-//    }
-//    
-//    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
-//        log.debug("willBeginAt")
-//    }
-//    
-//}
+extension CommanderViewController {
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+        log.debug(row)
+        if let size = items?.count, size >= row {
+            return true
+        }
+        
+        return items?[row].path.isDirectory == true
+    }
+    
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+        log.info(dropOperation)
+        
+        if let size = items?.count, size >= row {
+            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
+            return .move
+        }
+        
+        if let item = items?[row], item.path.isDirectory {
+            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.regular
+        } else {
+            tableView.draggingDestinationFeedbackStyle = NSTableViewDraggingDestinationFeedbackStyle.none
+        }
+        
+        return NSDragOperation.move
+    }
+    
+    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+        log.debug("Ended at")
+        
+    }
+    
+    func tableView(_ tableView: NSTableView, updateDraggingItemsForDrag draggingInfo: NSDraggingInfo) {
+        let pasteboard = draggingInfo.draggingPasteboard()
+        if let urls = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
+            log.info(urls)
+            var tasks = [CopyTask]()
+            
+            urls.forEach { url in
+                tasks.append(CopyTask(Path(url: url)!, to: self.path + url.lastPathComponent, type: .move, terminationHandler: { process in
+                    log.debug(process.terminationReason)
+                    log.debug(process.terminationStatus)
+                }))
+            }
+            
+            self.performSegue(withIdentifier: "ModalOperation", sender: tasks)
+        }
+    }
+    
+    func tableView(_ tableView: NSTableView, didDrag tableColumn: NSTableColumn) {
+        log.debug("Did drag")
+    }
+    
+    func tableView(_ tableView: NSTableView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forRowIndexes rowIndexes: IndexSet) {
+        log.debug("willBeginAt")
+    }
+    
+}
 
 // operations on files
 extension CommanderViewController {
