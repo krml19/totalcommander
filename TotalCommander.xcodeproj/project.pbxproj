@@ -24,27 +24,22 @@
 		F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD311EAEA7CC003D405F /* FileItem.swift */; };
 		F221AD351EAEAC5D003D405F /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F221AD341EAEAC5D003D405F /* TableCellView.swift */; };
 		F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */; };
-		F234B18F1EB1038A007D7B75 /* DeleteTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234B18E1EB1038A007D7B75 /* DeleteTask.swift */; };
 		F23AAAAA1EA7D53200E995B2 /* CommanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */; };
 		F23AAAAD1EA7D54D00E995B2 /* Commander.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */; };
 		F23AAAAF1EA7EEB700E995B2 /* FileKit+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23AAAAE1EA7EEB700E995B2 /* FileKit+Sort.swift */; };
-		F25D259F1EA5375200074EE6 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D259E1EA5375200074EE6 /* MainMenu.swift */; };
 		F25D25A11EA5375E00074EE6 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A01EA5375E00074EE6 /* Language.swift */; };
 		F25D25A51EA5443600074EE6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A41EA5443600074EE6 /* Task.swift */; };
-		F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D25A71EA55DF400074EE6 /* Defaults.swift */; };
 		F27BB1151EB16B330062E70E /* ProgressProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27BB1141EB16B330062E70E /* ProgressProvider.swift */; };
 		F280C1DF1EAB5E1D004E0BEB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280C1DE1EAB5E1D004E0BEB /* AlertController.swift */; };
 		F280C1E11EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280C1E01EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift */; };
 		F280C1E61EABECB0004E0BEB /* FileProgressProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */; };
 		F2819C851EAAA4B9000FBE8E /* FileKit+Handle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2819C841EAAA4B9000FBE8E /* FileKit+Handle.swift */; };
-		F2AA31C21EAFDF3E00FABED5 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AA31C11EAFDF3E00FABED5 /* AppMenu.swift */; };
 		F2CCDAF71E9C1D2000030116 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2CCDAF91E9C1D2000030116 /* Localizable.strings */; };
 		F2CCDAFC1E9C1D3800030116 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2CCDAFE1E9C1D3800030116 /* Localizable.strings */; };
 		F2CD02001EAFE7E6006B5EEE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD01FF1EAFE7E6006B5EEE /* WindowController.swift */; };
 		F2CD02021EAFEF70006B5EEE /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD02011EAFEF70006B5EEE /* LeftViewController.swift */; };
 		F2CD02051EAFEF7D006B5EEE /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD02031EAFEF7D006B5EEE /* RightViewController.swift */; };
 		F2CD02061EAFEF7D006B5EEE /* RightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2CD02041EAFEF7D006B5EEE /* RightViewController.xib */; };
-		F2E3CF061EAFCF0A00041002 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF051EAFCF0A00041002 /* TableView.swift */; };
 		F2E3CF081EAFDA4500041002 /* ContextualMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF071EAFDA4500041002 /* ContextualMenu.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,28 +92,23 @@
 		F221AD341EAEAC5D003D405F /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		F2347FDE1EAB4BB000D4311B /* FileKit+Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Tasks.swift"; sourceTree = "<group>"; };
 		F2347FE01EAB570B00D4311B /* TotalCommander.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TotalCommander.playground; sourceTree = "<group>"; };
-		F234B18E1EB1038A007D7B75 /* DeleteTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTask.swift; sourceTree = "<group>"; };
 		F23AAAA91EA7D53200E995B2 /* CommanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanderViewController.swift; sourceTree = "<group>"; };
 		F23AAAAC1EA7D54D00E995B2 /* Commander.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Commander.storyboard; sourceTree = "<group>"; };
 		F23AAAAE1EA7EEB700E995B2 /* FileKit+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Sort.swift"; sourceTree = "<group>"; };
-		F25D259E1EA5375200074EE6 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		F25D25A01EA5375E00074EE6 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		F25D25A41EA5443600074EE6 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		F25D25A71EA55DF400074EE6 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		F27BB1131EB151FF0062E70E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F27BB1141EB16B330062E70E /* ProgressProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressProvider.swift; sourceTree = "<group>"; };
 		F280C1DE1EAB5E1D004E0BEB /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		F280C1E01EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommanderViewContoller+Watch.swift"; sourceTree = "<group>"; };
 		F280C1E51EABECB0004E0BEB /* FileProgressProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProgressProvider.swift; sourceTree = "<group>"; };
 		F2819C841EAAA4B9000FBE8E /* FileKit+Handle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileKit+Handle.swift"; sourceTree = "<group>"; };
-		F2AA31C11EAFDF3E00FABED5 /* AppMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		F2CCDAF81E9C1D2000030116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F2CCDAFD1E9C1D3800030116 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F2CD01FF1EAFE7E6006B5EEE /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		F2CD02011EAFEF70006B5EEE /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		F2CD02031EAFEF7D006B5EEE /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		F2CD02041EAFEF7D006B5EEE /* RightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewController.xib; sourceTree = "<group>"; };
-		F2E3CF051EAFCF0A00041002 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		F2E3CF071EAFDA4500041002 /* ContextualMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextualMenu.swift; sourceTree = "<group>"; };
 		F51886F5D4C428BDEB8365C9 /* Pods-TotalCommanderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TotalCommanderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TotalCommanderUITests/Pods-TotalCommanderUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,7 +224,6 @@
 			children = (
 				F25D25A41EA5443600074EE6 /* Task.swift */,
 				F221AD291EAE68C4003D405F /* CopyTask.swift */,
-				F234B18E1EB1038A007D7B75 /* DeleteTask.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -284,12 +273,8 @@
 		F25D25A21EA537B400074EE6 /* Main menu */ = {
 			isa = PBXGroup;
 			children = (
-				F25D259E1EA5375200074EE6 /* MainMenu.swift */,
-				F25D25A71EA55DF400074EE6 /* Defaults.swift */,
 				F221AD331EAEAC46003D405F /* Cell */,
-				F2E3CF051EAFCF0A00041002 /* TableView.swift */,
 				F2E3CF071EAFDA4500041002 /* ContextualMenu.swift */,
-				F2AA31C11EAFDF3E00FABED5 /* AppMenu.swift */,
 			);
 			name = "Main menu";
 			sourceTree = "<group>";
@@ -609,15 +594,12 @@
 				F23AAAAF1EA7EEB700E995B2 /* FileKit+Sort.swift in Sources */,
 				F2E3CF081EAFDA4500041002 /* ContextualMenu.swift in Sources */,
 				F2184E731E9C1AB6006E0BDB /* ViewController.swift in Sources */,
-				F2AA31C21EAFDF3E00FABED5 /* AppMenu.swift in Sources */,
 				F25D25A11EA5375E00074EE6 /* Language.swift in Sources */,
 				F2CD02021EAFEF70006B5EEE /* LeftViewController.swift in Sources */,
 				F221AD321EAEA7CC003D405F /* FileItem.swift in Sources */,
 				F27BB1151EB16B330062E70E /* ProgressProvider.swift in Sources */,
 				F25D25A51EA5443600074EE6 /* Task.swift in Sources */,
 				F221AD2E1EAE9D49003D405F /* SizeCell.swift in Sources */,
-				F234B18F1EB1038A007D7B75 /* DeleteTask.swift in Sources */,
-				F25D25A81EA55DF400074EE6 /* Defaults.swift in Sources */,
 				F2347FDF1EAB4BB000D4311B /* FileKit+Tasks.swift in Sources */,
 				F2CD02001EAFE7E6006B5EEE /* WindowController.swift in Sources */,
 				F23AAAAA1EA7D53200E995B2 /* CommanderViewController.swift in Sources */,
@@ -626,11 +608,9 @@
 				F221AD2A1EAE68C4003D405F /* CopyTask.swift in Sources */,
 				F2819C851EAAA4B9000FBE8E /* FileKit+Handle.swift in Sources */,
 				F280C1DF1EAB5E1D004E0BEB /* AlertController.swift in Sources */,
-				F25D259F1EA5375200074EE6 /* MainMenu.swift in Sources */,
 				F280C1E11EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift in Sources */,
 				F221AD351EAEAC5D003D405F /* TableCellView.swift in Sources */,
 				F2184E711E9C1AB6006E0BDB /* AppDelegate.swift in Sources */,
-				F2E3CF061EAFCF0A00041002 /* TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

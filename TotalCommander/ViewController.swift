@@ -18,7 +18,6 @@ class ViewController: NSSplitViewController {
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
-            self.splitViewItems.first?.viewController.representedObject = representedObject
         }
     }
 }

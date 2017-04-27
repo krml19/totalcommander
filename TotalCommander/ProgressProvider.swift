@@ -7,6 +7,9 @@
 //
 
 import Cocoa
+import RxSwift
+import RxCocoa
+import RxGesture
 
 class ProgressProvider: NSObject {
     let progress = NSProgressIndicator()
