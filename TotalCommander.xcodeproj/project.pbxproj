@@ -41,6 +41,7 @@
 		F2CD02051EAFEF7D006B5EEE /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD02031EAFEF7D006B5EEE /* RightViewController.swift */; };
 		F2CD02061EAFEF7D006B5EEE /* RightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2CD02041EAFEF7D006B5EEE /* RightViewController.xib */; };
 		F2E3CF081EAFDA4500041002 /* ContextualMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E3CF071EAFDA4500041002 /* ContextualMenu.swift */; };
+		F2E563261EB1D6F600734A9F /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E563251EB1D6F600734A9F /* OperationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		F2CD02031EAFEF7D006B5EEE /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 		F2CD02041EAFEF7D006B5EEE /* RightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewController.xib; sourceTree = "<group>"; };
 		F2E3CF071EAFDA4500041002 /* ContextualMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextualMenu.swift; sourceTree = "<group>"; };
+		F2E563251EB1D6F600734A9F /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		F51886F5D4C428BDEB8365C9 /* Pods-TotalCommanderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TotalCommanderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TotalCommanderUITests/Pods-TotalCommanderUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +258,7 @@
 				F2CD02011EAFEF70006B5EEE /* LeftViewController.swift */,
 				F2CD02031EAFEF7D006B5EEE /* RightViewController.swift */,
 				F2CD02041EAFEF7D006B5EEE /* RightViewController.xib */,
+				F2E563251EB1D6F600734A9F /* OperationViewController.swift */,
 			);
 			name = Commander;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				F280C1E11EAB6A24004E0BEB /* CommanderViewContoller+Watch.swift in Sources */,
 				F221AD351EAEAC5D003D405F /* TableCellView.swift in Sources */,
 				F2184E711E9C1AB6006E0BDB /* AppDelegate.swift in Sources */,
+				F2E563261EB1D6F600734A9F /* OperationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

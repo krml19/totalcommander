@@ -278,35 +278,26 @@ extension CommanderViewController: NSTableViewDataSource {
 
 // operations on files
 extension CommanderViewController {
-    func pasteTask() {
+    func pasteTask(type: Task.TaskType = .copy) {
         guard let urls = (NSPasteboard.general().readObjects(forClasses: [NSURL.self], options: nil)) as? [URL] else {
             log.error("Cannot read from pasteboard")
             return
         }
         
+        var tasks = [CopyTask]()
+        
         urls.forEach { url in
-            CopyTask(Path(url: url)!, to: self.path + url.lastPathComponent , terminationHandler: { process in
+            tasks.append(CopyTask(Path(url: url)!, to: self.path + url.lastPathComponent, type: type, terminationHandler: { process in
                 log.debug(process.terminationReason)
                 log.debug(process.terminationStatus)
-            }).launch()
+            }))
         }
+        
+        self.performSegue(withIdentifier: "ModalOperation", sender: tasks)
     }
     
     func moveTask() {
-        let task = Task(.move)
-        
-        let src = Path("/Users/marcinkarmelita/Desktop/Archive.zip")
-        let dst = Path("/Users/marcinkarmelita/Desktop/Archive_copy.zip")
-        
-        task.configure(arguments: [src.rawValue, dst.rawValue])
-        task.terminationHandler = { process in
-            DispatchQueue.main.async(execute: {
-                log.debug(process.terminationReason)
-                log.debug(process.terminationStatus)
-            })
-        }
-        
-        task.run()
+        pasteTask(type: .move)
     }
     
     func copyTask() {
@@ -334,6 +325,12 @@ extension CommanderViewController {
         files.forEach({
             $0.delete()
         })
-        
     }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ModalOperation", let vc = segue.destinationController as? OperationViewController, let tasks = sender as? [CopyTask] {
+            vc.tasks = tasks
+        }
+    }
+    
 }

@@ -133,7 +133,7 @@
                         <splitViewItem id="zHv-CD-6BB"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="B1m-pY-55t">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="329"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
                     <connections>
@@ -143,7 +143,7 @@
                 </splitViewController>
                 <customObject id="rhL-76-aPY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="849"/>
+            <point key="canvasLocation" x="74" y="863.5"/>
         </scene>
         <!--Commander-->
         <scene sceneID="6iA-Xf-Zua">

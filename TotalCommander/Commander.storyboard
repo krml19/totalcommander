@@ -218,6 +218,7 @@
                         <outlet property="sizeColumn" destination="bQK-CU-0JA" id="g8V-Uo-4v3"/>
                         <outlet property="statusLabel" destination="rp6-ec-AE8" id="2AB-NB-GWA"/>
                         <outlet property="tableView" destination="faZ-fT-uXb" id="Qbu-DG-1cP"/>
+                        <segue destination="aYA-jF-miE" kind="show" identifier="ModalOperation" id="VoX-CF-ULd"/>
                     </connections>
                 </viewController>
                 <customObject id="k9r-a2-0N4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -256,6 +257,57 @@ CA
                 </menu>
             </objects>
             <point key="canvasLocation" x="248.5" y="146"/>
+        </scene>
+        <!--Operation View Controller-->
+        <scene sceneID="Lue-tJ-m1G">
+            <objects>
+                <viewController storyboardIdentifier="OperationViewController" id="aYA-jF-miE" customClass="OperationViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="wdP-CA-Xhq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator wantsLayer="YES" maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-oW-dET">
+                                <rect key="frame" x="10" y="140" width="345" height="20"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gP4-dM-dIR">
+                                <rect key="frame" x="359" y="132" width="87" height="32"/>
+                                <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eUC-BS-Jlu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissAction:" target="aYA-jF-miE" id="k93-1O-Jud"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cWB-K5-M6W">
+                                <rect key="frame" x="8" y="192" width="434" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Operation in progress" id="U62-Fd-K7I">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cWB-K5-M6W" firstAttribute="leading" secondItem="g1m-oW-dET" secondAttribute="leading" id="00j-Wg-Nwa"/>
+                            <constraint firstAttribute="trailing" secondItem="gP4-dM-dIR" secondAttribute="trailing" constant="10" id="2Gz-en-8P9"/>
+                            <constraint firstItem="g1m-oW-dET" firstAttribute="top" secondItem="cWB-K5-M6W" secondAttribute="bottom" constant="33" id="BOQ-uI-QxY"/>
+                            <constraint firstItem="gP4-dM-dIR" firstAttribute="centerY" secondItem="wdP-CA-Xhq" secondAttribute="centerY" id="DfB-FT-2yM"/>
+                            <constraint firstItem="cWB-K5-M6W" firstAttribute="trailing" secondItem="gP4-dM-dIR" secondAttribute="trailing" id="Gs5-wC-suQ"/>
+                            <constraint firstItem="gP4-dM-dIR" firstAttribute="leading" secondItem="g1m-oW-dET" secondAttribute="trailing" constant="10" id="Z41-r3-x2r"/>
+                            <constraint firstItem="g1m-oW-dET" firstAttribute="leading" secondItem="wdP-CA-Xhq" secondAttribute="leading" constant="10" id="rxN-kA-zsP"/>
+                            <constraint firstItem="g1m-oW-dET" firstAttribute="centerY" secondItem="wdP-CA-Xhq" secondAttribute="centerY" id="sun-iT-zeQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="gP4-dM-dIR" id="VM6-Xb-xyo"/>
+                        <outlet property="progressIndicator" destination="g1m-oW-dET" id="AFe-R5-6Co"/>
+                        <outlet property="progressTextField" destination="cWB-K5-M6W" id="1xi-zt-8AX"/>
+                    </connections>
+                </viewController>
+                <customObject id="Qcc-Tz-dZM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="146"/>
         </scene>
         <!--Right View Controller-->
         <scene sceneID="4NQ-hw-OxN">

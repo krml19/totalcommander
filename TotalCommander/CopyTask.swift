@@ -10,15 +10,24 @@ import Cocoa
 import FileKit
 
 class CopyTask: Task {
+    // class for copy or move operations
     
     private let from: Path
     private let to: Path
-    private var fileProgressProvider: FileProgressProvider?
     
-    init(_ from: Path, to: Path, terminationHandler: TerminationHandler) {
+    var progress: Double {
+        guard let dstSize = to.fileSize, let srcSize = from.fileSize else {
+            return 0.0
+        }
+        let result: Double = Double(dstSize) / Double(srcSize)
+        log.debug("CopyTask Progess: \(result)")
+        return Double.minimum(result, 1)
+    }
+    
+    init(_ from: Path, to: Path, type: TaskType = .copy, terminationHandler: TerminationHandler) {
         self.to = to
         self.from = from
-        super.init(.copy)
+        super.init(type)
         self.terminationHandler = terminationHandler
         setup()
     }
@@ -27,11 +36,6 @@ class CopyTask: Task {
         configure(arguments: [from.rawValue, to.rawValue])
     }
     
-    func addProgress(onStart: StartHandler? = nil, onProgress: ProgressHandler? = nil, onEnd: EndHandler? = nil) -> CopyTask {
-        fileProgressProvider = FileProgressProvider(self.from, dst: self.to, onStart: onStart, onProgress: onProgress, onEnd: onEnd)
-        return self
-    }
-
     func launch() {
         if to.exists {
             if AlertController.overrideFile() {
@@ -41,20 +45,4 @@ class CopyTask: Task {
             run()
         }
     }
-    
-    override func interrupt() {
-        super.interrupt()
-        fileProgressProvider?.stop()
-    }
-    
-    override func run() {
-        super.run()
-        fileProgressProvider?.start()
-    }
-    
-    override func done() {
-        super.done()
-        fileProgressProvider?.stop()
-    }
-    
 }

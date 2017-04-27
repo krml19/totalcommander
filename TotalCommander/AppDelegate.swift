@@ -75,6 +75,5 @@ extension AppDelegate: LocalizedDelegate {
         window_menu.title = "menu_window_menu".localized()
         minimize.title = "menu_window_minimize".localized()
         
-        MainMenu.updateLanguage(menu: NSApp.mainMenu!)
     }
 }
