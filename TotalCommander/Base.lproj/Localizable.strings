@@ -8,14 +8,25 @@
 
 // Base
 
-"button" = "Button";
-"TotalCommander" = "Commander";
-
 //menu
 "menu_app" = "Total Commander";
 "menu_file" = "File";
 "menu_edit" = "Edit";
 "menu_help" = "Help";
+"menu_language" = "Language";
+"menu_language_polish" = "Polish";
+"menu_language_english" = "English";
+
+"menu_tc_about" = "About TotalCommander";
+"menu_tc_hide" = "Hide";
+"menu_tc_hide_others" = "Hide others";
+"menu_tc_show" = "Show";
+"menu_tc_quit" = "Quit";
+"menu_view_menu" = "View";
+"menu_view_fullscreen" = "Fullscreen";
+"menu_window_menu" = "Window";
+"menu_window_minimize" = "Minimize";
+
 
 "menu_app_tooltip" = "Total Commander";
 "menu_file_tooltip" = "File";
@@ -24,5 +35,20 @@
 
 // commander
 "loc_bytes" = " bytes";
+
+//contextual menu
+"menu_contextual_copy" = "Copy";
+"menu_contextual_paste" = "Paste";
+"menu_contextual_delete" = "Delete";
+"menu_contextual_move" = "Move";
+"OK" = "OK";
+"Cancel" = "Cancel";
+"alert_message_exists" = "Warning.";
+"alert_text_exists" = "File already exists.";
+"alert_message_delete" = "Warning.";
+"alert_text_delete" = "Deleting cannot be reversed.";
+"alert_error_occured" = "Error";
+
+
 
 

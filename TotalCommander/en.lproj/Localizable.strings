@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  TotalCommander
+
+  Created by Marcin Karmelita on 10/04/17.
+  Copyright © 2017 Marcin Karmelita. All rights reserved.
+*/
+
+// Base
+
+//menu
+"menu_app" = "Total Commander";
+"menu_file" = "File";
+"menu_edit" = "Edit";
+"menu_help" = "Help";
+"menu_language" = "Language";
+"menu_language_polish" = "Polish";
+"menu_language_english" = "English";
+
+"menu_tc_about" = "About TotalCommander";
+"menu_tc_hide" = "Hide";
+"menu_tc_hide_others" = "Hide others";
+"menu_tc_show" = "Show";
+"menu_tc_quit" = "Quit";
+"menu_view_menu" = "View";
+"menu_view_fullscreen" = "Fullscreen";
+"menu_window_menu" = "Window";
+"menu_window_minimize" = "Minimize";
+
+
+"menu_app_tooltip" = "Total Commander";
+"menu_file_tooltip" = "File";
+"menu_edit_tooltip" = "Edit";
+"menu_help_tooltip" = "Help";
+
+// commander
+"loc_bytes" = " bytes";
+"menu_column_name" = "Name";
+"menu_column_date" = "Modification date";
+"menu_column_size" = "Size";
+
+"menu_column_name_tooltip" = "Sort by name";
+"menu_column_date_tooltip" = "Sort by date";
+"menu_column_size_tooltip" = "Sort by size";
+
+
+//contextual menu
+"menu_contextual_copy" = "Copy";
+"menu_contextual_paste" = "Paste";
+"menu_contextual_delete" = "Delete";
+"menu_contextual_move" = "Move";
+"OK" = "OK";
+"Cancel" = "Cancel";
+"alert_message_exists" = "Warning.";
+"alert_text_exists" = "File already exists.";
+"alert_message_delete" = "Warning.";
+"alert_text_delete" = "Deleting cannot be reversed.";
+"alert_error_occured" = "Error";
+
+// operation controller
+"menu_operation" = "Operation on files";
+"dismiss" = "Suspend";
+"operation" = "Number of files: ";
+

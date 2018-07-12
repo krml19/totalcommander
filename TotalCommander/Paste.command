@@ -10,4 +10,4 @@ echo "*********************************"
 echo "Paste the content of pastboard"
 echo "*********************************"
 
-
+pbpaste > "${1}"

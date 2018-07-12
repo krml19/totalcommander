@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CommanderViewController.(viewDidLoad() -&gt; ()).(closure #1):CommanderViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "CommanderViewController.tableViewDoubleClick(NSTableView) -&gt; ():CommanderViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -12,6 +15,26 @@
                value = "selectedPath.isExecutable">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Path.(sorted(by : String?, ascending : Bool) -&gt; [Path]).(closure #1):FileKit+Sort.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "b">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Path.sorted(by : String?, ascending : Bool) -&gt; [Path]:FileKit+Sort.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CommanderViewController.(path.didset).(closure #2).(closure #1).(closure #1):CommanderViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CommanderViewController.(path.didset).(closure #2).(closure #1):CommanderViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ContextualMenu.deleteAction(Any) -&gt; ():ContextualMenu.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6" customClass="MainMenu" customModule="TotalCommander" customModuleProvider="target">
+                        <items>
+                            <menuItem title="TotalCommander" toolTip="Hello" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="TotalCommander" systemMenu="apple" id="uQy-DD-JDr" customClass="MainMenu" customModule="TotalCommander" customModuleProvider="target">
+                                    <items>
+                                        <menuItem title="About TotalCommander" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Hide TotalCommander" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit TotalCommander" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Window" id="aUF-d1-5bR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="VwT-WD-YPe"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Language" id="WaQ-Gn-7W6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Language" id="b4T-oP-Mn1">
+                                    <items>
+                                        <menuItem title="Polish" id="Mpp-1W-VBk">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="polish:" target="Ady-hI-5gd" id="Mx0-aS-XhG"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="OJI-mK-ALe"/>
+                                        <menuItem title="English" id="p3F-LB-ljf">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="english:" target="Ady-hI-5gd" id="Qfe-hX-8HU"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                        <accessibility identifier="totalCommander"/>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TotalCommander" customModuleProvider="target">
+                    <connections>
+                        <outlet property="about" destination="5kV-Vb-QxS" id="kYc-CJ-Hhz"/>
+                        <outlet property="english" destination="p3F-LB-ljf" id="iUM-o2-ciF"/>
+                        <outlet property="hide" destination="Olw-nP-bQN" id="yXc-3e-UQC"/>
+                        <outlet property="hide_others" destination="Vdr-fp-XzO" id="jRi-1y-HPp"/>
+                        <outlet property="language_menu" destination="b4T-oP-Mn1" id="6IT-Oj-A3n"/>
+                        <outlet property="minimize" destination="OY7-WF-poV" id="9FZ-sq-qQU"/>
+                        <outlet property="polish" destination="Mpp-1W-VBk" id="qki-x0-tAa"/>
+                        <outlet property="quit" destination="4sb-4s-VLi" id="Wh2-08-1HS"/>
+                        <outlet property="show" destination="Kd2-mp-pUS" id="PEX-Fh-32l"/>
+                        <outlet property="window_menu" destination="Td7-aD-5lo" id="LIb-eu-gQD"/>
+                    </connections>
+                </customObject>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Total Commander" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                    </window>
+                    <connections>
+                        <segue destination="vbg-8u-f81" kind="relationship" relationship="window.shadowedContentViewController" id="1Wi-RH-ppo"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="373"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O7u-rs-sZO">
+            <objects>
+                <splitViewController id="vbg-8u-f81" customClass="ViewController" customModule="TotalCommander" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="Svu-XK-W6c"/>
+                        <splitViewItem id="zHv-CD-6BB"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="B1m-pY-55t">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="fW8-yO-pXO" kind="relationship" relationship="splitItems" id="0Zp-oS-9VX"/>
+                        <segue destination="G1F-lx-RkN" kind="relationship" relationship="splitItems" id="gny-uW-7iX"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="rhL-76-aPY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="849"/>
+        </scene>
+        <!--Commander-->
+        <scene sceneID="6iA-Xf-Zua">
+            <objects>
+                <controllerPlaceholder storyboardIdentifier="left" storyboardName="Commander" id="fW8-yO-pXO" sceneMemberID="viewController"/>
+                <customObject id="Hbx-eh-jKH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="787"/>
+        </scene>
+        <!--Commander-->
+        <scene sceneID="M3I-NT-yoM">
+            <objects>
+                <controllerPlaceholder storyboardIdentifier="right" storyboardName="Commander" id="G1F-lx-RkN" sceneMemberID="viewController"/>
+                <customObject id="HlA-wK-WE4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="497" y="930"/>
+        </scene>
+    </scenes>
+</document>

@@ -8,19 +8,58 @@
 
 // Polish
 
-"button" = "Przycisk";
-"TotalCommander" = "Total Commander";
-
-// menu
+//menu
 "menu_app" = "Total Commander";
 "menu_file" = "Plik";
 "menu_edit" = "Edycja";
 "menu_help" = "Pomoc";
+"menu_language" = "Język";
+"menu_language_polish" = "Polski";
+"menu_language_english" = "Angielski";
+
+"menu_tc_about" = "O TotalCommander";
+"menu_tc_hide" = "Ukryj";
+"menu_tc_hide_others" = "Ukryj pozostałe";
+"menu_tc_show" = "Pokaż";
+"menu_tc_quit" = "Zakończ";
+"menu_view_menu" = "Widok";
+"menu_view_fullscreen" = "Tryb pełnoekranowy";
+"menu_window_menu" = "Okno";
+"menu_window_minimize" = "Zminimalizuj";
 
 "menu_app_tooltip" = "Total Commander";
-"menu_file_tooltip" = "Plik";
-"menu_edit_tooltip" = "Edycja";
-"menu_help_tooltip" = "Pomoc";
+"menu_file_tooltip" = "File";
+"menu_edit_tooltip" = "Edit";
+"menu_help_tooltip" = "Help";
 
 // commander
 "loc_bytes" = " bajtów";
+"menu_column_name" = "Nazwa";
+"menu_column_date" = "Data modyfikacji";
+"menu_column_size" = "Rozmiar";
+
+"menu_column_name_tooltip" = "Sortuj po nazwie";
+"menu_column_date_tooltip" = "Sortuj po dacie";
+"menu_column_size_tooltip" = "Sort po rozmiarze";
+
+
+//contextual menu
+"menu_contextual_copy" = "Kopiuj";
+"menu_contextual_paste" = "Wklej";
+"menu_contextual_delete" = "Usuń";
+"menu_contextual_move" = "Przenieś";
+"OK" = "OK";
+"Cancel" = "Anuluj";
+"alert_message_exists" = "Uwaga.";
+"alert_text_exists" = "Plik już istnieje.";
+"alert_message_delete" = "Uwaga.";
+"alert_text_delete" = "Operacja usunięcia jest nieodwracalna.";
+"alert_error_occured" = "Błąd";
+
+// operation controller
+"menu_operation" = "Operacja na plikach";
+"dismiss" = "Przerwij";
+"operation" = "Liczba plików: ";
+
+
+

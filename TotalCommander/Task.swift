@@ -24,10 +24,11 @@ open class Task: NSObject {
     private var arguments: [String]?
     private var process: Process!
     private var qos = DispatchQoS.QoSClass.background
+    var isFinished: Bool = false
     
-    var terminationHandler: TerminationHandler
+    dynamic var terminationHandler: TerminationHandler
     
-    dynamic var isRunning: Bool {
+    var isRunning: Bool {
         return process.isRunning
     }
     
@@ -52,7 +53,7 @@ open class Task: NSObject {
         }
     }
     
-    func done() {
+    dynamic func done() {
         
     }
     
@@ -69,13 +70,14 @@ open class Task: NSObject {
             self.process.launchPath = path
             self.process.arguments = self.arguments
 
-            self.process.terminationHandler = { [unowned self] handler in
+            self.process.terminationHandler = { [weak self] handler in
                 log.info(handler.terminationStatus)
                 
                 DispatchQueue.main.async(execute: {
-                    self.done()
-                    if self.terminationHandler != nil {
-                        self.terminationHandler!(handler)
+                    self?.isFinished = true
+                    if self?.terminationHandler != nil {
+                        self?.terminationHandler!(handler)
+                        
                     }
                 })
             }

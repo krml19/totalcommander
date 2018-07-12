@@ -27,6 +27,16 @@ class AlertController {
     }
     
     class func overrideFile() -> Bool {
-        return dialogOKCancel(question: "alert_message_exists".localized(), text: "alert_text_exists")
+        return dialogOKCancel(question: "alert_message_exists".localized(), text: "alert_text_exists".localized())
+    }
+    
+    class func deleteFile() -> Bool {
+        return dialogOKCancel(question: "alert_message_delete".localized(), text: "alert_text_delete".localized())
+    }
+    
+    @discardableResult
+    class func errorOccurred(_ error: Error) -> Bool {
+        return AlertController.alert(message: "alert_error_occured".localized(), informativeText: error.localizedDescription, buttonTitles: ["OK".localized()])
+            .runModal() == NSAlertFirstButtonReturn
     }
 }

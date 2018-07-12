@@ -21,7 +21,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <progressIndicator hidden="YES" wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-uB-lvz">
+                <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5MW-uB-lvz">
                     <rect key="frame" x="0.0" y="2" width="100" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="bEH-cz-sST"/>

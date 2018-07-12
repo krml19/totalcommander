@@ -9,29 +9,46 @@
 import Foundation
 import FileKit
 
-extension Path {
-    enum SortingOptions: String {
-        case name
-        case modificationDate
-        case size
-        
-        static func indexOf(index: Int) -> SortingOptions {
-            switch index {
-            case 0:
-                return .name
-            case 1:
-                return .modificationDate
-            case 2:
-                return .size
-            default:
-                return .name
-            }
+protocol Sortable {
+    associatedtype T
+    func sorted(by sortDescriptor: NSSortDescriptor?) -> [T]
+}
+
+enum SortingOptions: String {
+    case name
+    case modificationDate
+    case size
+    
+    static func indexOf(index: Int) -> SortingOptions {
+        switch index {
+        case 0:
+            return .name
+        case 1:
+            return .modificationDate
+        case 2:
+            return .size
+        default:
+            return .name
         }
+    }
+}
+
+extension Path: Sortable {
+    var directories: [Path] {
+        return children().filter({$0.isDirectory})
+    }
+    
+    var files: [Path] {
+        return children().filter({!$0.isDirectory})
     }
     
     func sorted(by sortDescriptor: NSSortDescriptor?) -> [Path] {
         guard let sortDescriptor = sortDescriptor else { return children() }
-        return sorted(by: sortDescriptor.key, ascending: sortDescriptor.ascending)
+        let sortedChildren = sorted(by: sortDescriptor.key, ascending: sortDescriptor.ascending)
+        var dirs = sortedChildren
+            .filter({$0.isDirectory})
+        dirs.append(contentsOf: sortedChildren.filter({!$0.isDirectory}))
+        return dirs
     }
     
     private func sorted(by type: String?, ascending: Bool = true) -> [Path] {
@@ -41,7 +58,8 @@ extension Path {
         switch type {
         case .name:
             return sorted({
-                ($0.0.fileName < $0.1.fileName) == ascending
+                ($0.0.fileName.lowercased() < $0.1.fileName.lowercased()) == ascending
+                
             })
         case .modificationDate:
             return sorted({

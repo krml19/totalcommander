@@ -12,16 +12,20 @@ import Localize_Swift
 protocol LocalizedDelegate {
     func langugeDidChange()
 }
+enum Language: String {
+    case pl = "pl-PL"
+    case en = "en"
+}
+
 
 class Localizable {
     
-    enum Language: String {
-        case pl = "pl-PL"
-        case en = "en"
-    }
-    
     class func set(language: Language) {
         Localize.setCurrentLanguage(language.rawValue)
+    }
+    
+    class func currentLanguage() -> Language {
+        return Language(rawValue: Localize.currentLanguage())!
     }
     
     class func toggleLanguage() {
